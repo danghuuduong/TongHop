@@ -4,6 +4,7 @@ import Start_Stop from './component/11_UseRef_Start_Stop';
 import UseCallBacktest from './component/12_UseCallBack_And_ReactmemoHoc';
 import UseReducerTest from './component/14_UseReducer';
 import UseReducerTestLan2 from './component/15_UseReducer_Lan2';
+import Usecontex from './component/16_useContext/index';
 // import Avatar_preview from './component/With_preview_avatar';
 // import Avatar_preview_ANTD from './component/With_preview_avatar_ANTD';
 // import Avatar_preview from './component/With_preview_avatar';
@@ -21,7 +22,8 @@ function App() {
       {/* <Start_Stop /> */}
       {/* <UseCallBacktest /> */}
       {/* <UseReducerTest /> */}
-      <UseReducerTestLan2 />
+      {/* <UseReducerTestLan2 /> */}
+      <Usecontex />
     </div>
   );
 }
