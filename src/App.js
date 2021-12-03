@@ -1,5 +1,5 @@
 import { ThemeContext } from "./ThemeContext_Provide";
-import React  from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 import ReactDOM from 'react-dom';
 import Start_Stop from './component/11_UseRef_Start_Stop';
 import UseCallBacktest from './component/12_UseCallBack_And_ReactmemoHoc';
@@ -13,6 +13,26 @@ import Usecontex from './component/16_useContext/index';
 // import Scroll from './component/Scroll_event_Test';
 // import Todolist_localStorage from './component/Todolist_LocalStorage';
 function App() {
+  const [make, setMake] = useState('')
+  const [allvalue, SetAllvalue] = useState([0, 0])
+
+  const Onchagemake = (e) => {
+    setMake(e.target.value)
+  }
+  const Them = () => {
+    SetAllvalue([...allvalue, +make])
+    setMake('')
+  }
+
+  const tinhtoan = useMemo(() => {
+    return allvalue.reduce((a, b) => a + b)
+  }, [allvalue])
+
+  const hamvovan = (() => {
+    console.log("🙉🍀-render hamvovan")
+  }
+  )
+
   return (
     <div >
       {/* <Todolist_localStorage /> */}
@@ -24,7 +44,25 @@ function App() {
       {/* <UseReducerTest /> */}
       {/* <UseReducerTestLan2 /> */}
       {/* <Usecontex /> */}
-      <PHanmuoisauB />
+      {/* <PHanmuoisauB /> */} v
+
+      <input
+        value={make}
+        onChange={Onchagemake}
+      />
+      <button onClick={Them}>
+        Add
+      </button>
+      <button onClick={hamvovan}>
+        thu
+      </button>
+      <div >Tong: {tinhtoan}</div>
+      <ul>
+        {
+          allvalue && allvalue.map((x, i) => <li key={i}>{x}</li>)
+        }
+        <UseReducerTest prroo={hamvovan} />
+      </ul>
     </div>
   );
 }

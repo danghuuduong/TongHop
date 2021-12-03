@@ -1,4 +1,4 @@
-import React, { useReducer, useState } from 'react'
+import React, { useReducer, useState, memo } from 'react'
 // Học useReducer
 
 // Bài Tập. Đề bài là Tăng và Giảm State kia lên 1 hoặc -1 .
@@ -18,7 +18,6 @@ const initSate = 10
 const Up_Action = 'up'
 const Dow_Action = 'dow'
 const reducer = (state, action) => {        //Nhận vô 2 input là state + actions , và khuyến cáo sài switch(action)
-    console.log("🙉🍀 __reducer running")
     switch (action) {
         case Up_Action:
             return state + 1
@@ -33,6 +32,7 @@ const reducer = (state, action) => {        //Nhận vô 2 input là state + act
 
 function UseReducerTest() {
     const [count, dispatch] = useReducer(reducer, initSate)
+    console.log("🙉🍀 reder UseReducerTest")
 
     return (
         <div style={{ padding: 50, border: '1px solid black', }}>
@@ -43,4 +43,4 @@ function UseReducerTest() {
     )
 }
 
-export default UseReducerTest
+export default memo(UseReducerTest)
