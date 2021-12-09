@@ -1,52 +1,42 @@
 import React from "react";
 import { Row, Col } from "antd";
-import { PhoneOutlined, GoogleOutlined } from "@ant-design/icons";
+import style from "./style.module.css";
 function Home() {
   return (
     <>
       <Row
         style={{
-          backgroundColor: "#1e1e1f",
-          height: 45,
-          color: "#ffffff99",
+          backgroundColor: "#f57224",
+          height: 40,
+          color: "white",
           display: "flex",
           alignItems: "center",
         }}
       >
         <Col span={12}>
-          <div style={{ transform: "translateX(10%)" }}>
+          <div  className={style['navigation_top_left']}>
             <span>
-              {" "}
-              <PhoneOutlined /> +1 (123) 888 9999
+              <i class="fas fa-phone-alt" /> +1 (123) 888 9999
             </span>
-            <span> | </span>
             <span>
-              {" "}
-              <GoogleOutlined /> danghuuduong98@gmail.com{" "}
+              <i class="far fa-envelope" /> danghuuduong98@gmail.com
             </span>
           </div>
         </Col>
 
         <Col span={12}>
-          <div style={{ transform: "translateX(-10%)", textAlign: "end" }}>
+          <div className={style['navigation_top_right']}>
             <span>
-              {" "}
-              <PhoneOutlined /> Store Locator
+               ĐĂNG NHẬP
             </span>
-            <span> | </span>
             <span>
-              {" "}
-              <PhoneOutlined /> Checkout
+               ĐĂNG KÝ
             </span>
-            <span> | </span>
             <span>
-              {" "}
-              <PhoneOutlined /> My Account
+               LIÊN HỆ
             </span>
-            <span> | </span>
             <span>
-              {" "}
-              <PhoneOutlined /> Languege
+               NGÔN NGỮ
             </span>
           </div>
         </Col>
