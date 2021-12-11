@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Form, Input, Button, Row, Col, Typography, Avatar, Image } from "antd";
+import { Form, Input, Button, Row, Col, Typography, Avatar } from "antd";
 import {
   TeamOutlined,
   ShoppingOutlined,
