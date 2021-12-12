@@ -14,12 +14,18 @@ import {
   DropdownMenu,
   DropdownItem,
 } from "reactstrap";
+import { Modal, Button } from 'antd';
+import Login from "./Login";
 
 // https://codesandbox.io/s/stupefied-leftpad-se7e3?file=/src/App.js
 function HeaderTop() {
   const [isOpen, setIsOpen] = React.useState(false);
+  const [isModalVisible, setIsModalVisible] = React.useState(false);
   const noRefCheck = () => {
     setIsOpen(!isOpen);
+  };
+  const showModal = () => {
+    setIsModalVisible(!isModalVisible);
   };
   return (
     <>
@@ -75,9 +81,14 @@ function HeaderTop() {
             <span style={{color:'black', transform:'translateY(5px)'}}> |
             </span>
             <NavItem>
-              <NavLink>
+              <NavLink onClick={showModal}>
                 ĐĂNG NHẬP
               </NavLink>
+                  <>
+                  <Modal visible={isModalVisible} onCancel={showModal} footer={null} width={450} style={{borderRadius:10}}>
+                    <Login/>
+                  </Modal>
+                </>
             </NavItem>
 
             <UncontrolledDropdown inNavbar nav>

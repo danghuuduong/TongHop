@@ -1,15 +1,22 @@
 import React, { useEffect, useState } from "react";
+import google from '../Images/google.png'
+
 import { Form, Input, Button, Row, Col, Typography, Avatar } from "antd";
 import {
-  TeamOutlined,
-  ShoppingOutlined,
+  LockOutlined,
   UserOutlined,
 } from "@ant-design/icons";
 import firebase, { auth } from "../../Firebase/config";
 const Google_provider = new firebase.auth.GoogleAuthProvider();
 
 function Login() {
+  const [form] = Form.useForm();
+  const [, forceUpdate] = useState({});
   const onFinish = (values) => {};
+
+  useEffect(() => {
+    forceUpdate({});
+  }, []);
   //-----------------------------------------------
   const [usersLogin, SetUsersLogin] = useState();
   console.log("🙉🍀 __ usersLogin", usersLogin);
@@ -26,51 +33,90 @@ function Login() {
   //-----------------------------------------------
 
   return (
-    <Row justify="center" style={{ height: "100vh" }}>
+    <Row justify="center" >
       <Col
-        span={10}
-        style={{ border: "1px solid ", textAlign: "center", padding: 10 }}
+        span={24}
+        style={{ textAlign: "center", padding: 10 }}
       >
-        <Typography.Title level={2}>Login Em</Typography.Title>
-        <Form name="basic" onFinish={onFinish}>
+        <Typography.Title level={2}>ĐĂNG NHẬP</Typography.Title>
+        <Form name="basic" onFinish={onFinish} form={form}>
           <Form.Item
             name="username"
-            style={{ marginBottom: 5 }}
-            rules={[{ required: true, message: "Please input your username!" }]}
+            // rules={[{ required: true, message: "Please input your username!" }]}
+            rules={[{ required: true, message: "Vui lòng nhập tên đăng nhập" }]}
           >
-            <Input placeholder="Username" prefix={<TeamOutlined />} />
+            <Input size="large" placeholder="Username" prefix={<UserOutlined />} />
           </Form.Item>
 
           <Form.Item
             name="password"
-            style={{ marginBottom: 5 }}
-            rules={[{ required: true, message: "Please input your password!" }]}
+            // rules={[{ required: true, message: "Please input your password!" }]}
+            rules={[{ required: true, message: "Vui lòng nhập mật khẩu" }]}
           >
-            <Input.Password
+            <Input.Password size="large"
               placeholder="Username"
-              prefix={<ShoppingOutlined />}
+              prefix={<LockOutlined />}
             />
           </Form.Item>
 
-          <Form.Item style={{ marginBottom: 10 }}>
-            <Button type="primary" htmlType="submit" style={{ width: "100%" }}>
-              Đăng Nhập
-            </Button>
+          <Form.Item style={{ marginBottom: 10 }} shouldUpdate>
+            {() => {
+              const forceUpdate = !form.isFieldsTouched(true) || !!form.getFieldsError().filter(({ errors }) => errors.length).length
+              return (
+                <Button
+                  size="large"
+                  type="primary"
+                  htmlType="submit"
+                  className={forceUpdate ? 'bt__forceUpdate_lg' : 'bt__forceUpdate_lg_ok'}
+                  disabled={ forceUpdate }
+                >
+                Đăng Nhập
+              </Button>
+            )
+            }}
           </Form.Item>
         </Form>
-        <span
-          style={{ display: "flex", justifyContent: "end", marginBottom: 10 }}
+        <div
+          style={{ marginBottom: 5,textAlign:'end' }}
         >
-          <span style={{ marginRight: 10 }}>Đăng ký nhanh</span>
-          <span>Quên mật khẩu ?</span>
-        </span>
+          <span style={{color:'blue'}}>Quên mật khẩu ?</span>
+        </div>
 
-        <span style={{ display: "flex" }}>
-          <Button style={{ width: "50%" }} onClick={hanldeGoogle}>
-            Đăng Nhập Google
+        <div
+          style={{marginBottom: 10 }}
+        >
+          <div style={{color:'#dbdbdb', display:'flex',alignItems:'center',justifyContent:'center'}}>
+            <div style={{transform:'translateY(-6px)'}}>_____________________________</div> 
+            <span style={{margin:'0 15px',color:'#aba8a8'}}> HOẶC  </span>
+            <div style={{transform:'translateY(-6px)'}}>_____________________________</div> 
+          </div>
+        </div>
+        
+        <Form.Item  >
+          <span style={{ display: "flex",justifyContent:'space-between' }}>
+          <Button size="large" 
+          style={{ width: "49%",backgroundColor:'#1877f2',color:'white'
+          ,fontSize:18,borderRadius:3,
+          display:'flex',alignItems:'center'
+        }}
+          >
+            <i class="fab fa-facebook-square" style={{fontSize:30}}></i> 
+            <span style={{marginLeft:10}}>Facebook</span>
           </Button>
-          <Button style={{ width: "50%" }}>Đăng Nhập FaceBook</Button>
-        </span>
+          <Button size="large" 
+          style={{ width: "49%" ,backgroundColor:'#4285f4',display:'flex',alignItems:'center',fontSize:18,borderRadius:3,}} 
+          onClick={hanldeGoogle}>
+            <img src={google} style={{width:34,backgroundColor:'white',transform:'translateX(-13px)'}}/>
+            <span style={{marginLeft:10,color:'white'}}>Google</span>
+            </Button>
+          </span>
+        </Form.Item>
+
+        <Form.Item  >
+            <span >Bạn mới biết đến Dương ?</span>
+            <span style={{color:'red'}}> ĐĂNG KÝ !</span>
+        </Form.Item>
+         
       </Col>
       <div
         style={{
