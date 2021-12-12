@@ -1,4 +1,6 @@
 import React from "react";
+import img from '../Images/logo.png'
+
 import {
   Collapse,
   Navbar,
@@ -21,35 +23,33 @@ function HeaderTop() {
   };
   return (
     <>
-      <Navbar color="red" expand="lg" light>
-        <NavbarBrand href="/">LOGO</NavbarBrand>
+      <Navbar color="red" expand="lg" light style={{backgroundColor:'#dfdedd',height:43}}>
+        {/* <NavbarBrand href="/"><img src={img} style={{width:150}} /> </NavbarBrand> */}
 
-        <NavbarToggler onClick={noRefCheck} />
+        <NavbarToggler onClick={noRefCheck} style={{fontSize:16,color:'#dfd', transform:'translateY(-3px)'}}/>
 
-        <Collapse navbar isOpen={isOpen}>
-          <Nav className="me-auto" navbar>
+        <Collapse navbar isOpen={isOpen} style={{transform: isOpen ? 'translateX(10px)' : ''}}>
+          <Nav className="me-auto" navbar style={{ transform: isOpen ? '' : 'translateX(15%)'}}>
             <NavItem>
-              <NavLink href="/components/">
-                <i class="fas fa-phone-alt" style={{ color: "#1b74e4" }} />
+              <NavLink href="/components/" >
+                <i class="fas fa-phone-alt" />
                 +(84)986442833
               </NavLink>
             </NavItem>
 
+            
+
             <NavItem>
               <NavLink>
-                <i
-                  class="fab fa-facebook-square"
-                  style={{ color: "#1b74e4" }}
-                />{" "}
-                Faceobook
+                <i class="fas fa-headset"></i> CHĂM SÓC KHÁCH HÀNG
               </NavLink>
             </NavItem>
           </Nav>
           {/* ============================================================= */}
-          <Nav navbar>
+          <Nav navbar style={{ transform: isOpen ? '' : 'translateX(-10%)'}}>
             <NavItem>
               <NavLink style={{ position: "relative" }}>
-                <i class="far fa-bell"></i> Thông báo
+                <i class="far fa-bell"></i> THÔNG BÁO
                 <span
                   style={{
                     backgroundColor: "#ff9f28",
@@ -69,13 +69,14 @@ function HeaderTop() {
 
             <NavItem>
               <NavLink>
-                <i class="fas fa-user-plus"></i> Đăng Ký
+                 ĐĂNG KÝ
               </NavLink>
             </NavItem>
-
+            <span style={{color:'black', transform:'translateY(5px)'}}> |
+            </span>
             <NavItem>
               <NavLink>
-                <i class="fas fa-key"></i> Đăng Nhập
+                ĐĂNG NHẬP
               </NavLink>
             </NavItem>
 
@@ -85,7 +86,7 @@ function HeaderTop() {
                   class="fas fa-language"
                   style={{ fontSize: 22, color: "#ff9f28" }}
                 ></i>{" "}
-                Ngôn Ngữ
+                LANGUAGE
               </DropdownToggle>
               <DropdownMenu right>
                 <DropdownItem>Tiếng Việt</DropdownItem>
@@ -93,11 +94,7 @@ function HeaderTop() {
                 <DropdownItem>English</DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>
-            <NavItem>
-              <NavLink>
-                <i class="fas fa-headset"></i> Liên Hệ
-              </NavLink>
-            </NavItem>
+            
           </Nav>
         </Collapse>
       </Navbar>
