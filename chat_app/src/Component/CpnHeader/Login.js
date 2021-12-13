@@ -9,17 +9,14 @@ import {
 import firebase, { auth } from "../../Firebase/config";
 const Google_provider = new firebase.auth.GoogleAuthProvider();
 
-function Login() {
+function Login( {getUsersLogin}) {
   const [form] = Form.useForm();
   const [, forceUpdate] = useState({});
   const onFinish = (values) => {};
 
-  useEffect(() => {
-    forceUpdate({});
-  }, []);
+  
   //-----------------------------------------------
   const [usersLogin, SetUsersLogin] = useState();
-  console.log("🙉🍀 __ usersLogin", usersLogin);
 
   const hanldeGoogle = () => {
     auth.signInWithPopup(Google_provider);
@@ -27,9 +24,14 @@ function Login() {
   const hanldeGoogle_signOut = () => {
     auth.signOut(Google_provider);
   };
-  auth.onAuthStateChanged((user) => {
-    SetUsersLogin(user?._delegate);
-  });
+  useEffect(() => {
+    forceUpdate({});
+    auth.onAuthStateChanged((user) => {
+      SetUsersLogin(user?._delegate);
+      getUsersLogin(user?._delegate)
+    });
+  }, []);
+
   //-----------------------------------------------
 
   return (
@@ -100,7 +102,7 @@ function Login() {
           display:'flex',alignItems:'center'
         }}
           >
-            <i class="fab fa-facebook-square" style={{fontSize:30}}></i> 
+            <i className="fab fa-facebook-square" style={{fontSize:30}}></i> 
             <span style={{marginLeft:10}}>Facebook</span>
           </Button>
           <Button size="large" 
@@ -118,33 +120,6 @@ function Login() {
         </Form.Item>
          
       </Col>
-      <div
-        style={{
-          position: "absolute",
-          right: 50,
-          top: 10,
-        }}
-      >
-        {usersLogin && (
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "end",
-              flexDirection: "column",
-            }}
-          >
-            <div>
-              {" "}
-              Chào bạn{" "}
-              <span style={{ color: "#f56a00" }}>
-                {usersLogin.displayName}
-              </span>{" "}
-              <Avatar size={40} src={usersLogin.photoURL} />
-            </div>
-            <Button onClick={hanldeGoogle_signOut}>Đăng xuất</Button>
-          </div>
-        )}
-      </div>
     </Row>
   );
 }

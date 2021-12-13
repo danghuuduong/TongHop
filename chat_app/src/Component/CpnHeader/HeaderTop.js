@@ -1,11 +1,9 @@
 import React from "react";
-import img from '../Images/logo.png'
-
+// import img from '../Images/logo.png'
 import {
   Collapse,
   Navbar,
   NavbarToggler,
-  NavbarBrand,
   Nav,
   NavItem,
   NavLink,
@@ -14,19 +12,25 @@ import {
   DropdownMenu,
   DropdownItem,
 } from "reactstrap";
-import { Modal, Button } from 'antd';
+import { Modal,Avatar} from 'antd';
 import Login from "./Login";
+import Logout from "./Logout";
 
 // https://codesandbox.io/s/stupefied-leftpad-se7e3?file=/src/App.js
 function HeaderTop() {
   const [isOpen, setIsOpen] = React.useState(false);
   const [isModalVisible, setIsModalVisible] = React.useState(false);
+  const [user, setUser] = React.useState(null);
+
   const noRefCheck = () => {
     setIsOpen(!isOpen);
   };
   const showModal = () => {
     setIsModalVisible(!isModalVisible);
   };
+  const getUsersLogin =(props) =>{
+    setUser(props)
+  }
   return (
     <>
       <Navbar color="red" expand="lg" light style={{backgroundColor:'#dfdedd',height:43}}>
@@ -38,7 +42,7 @@ function HeaderTop() {
           <Nav className="me-auto" navbar style={{ transform: isOpen ? '' : 'translateX(15%)'}}>
             <NavItem>
               <NavLink href="/components/" >
-                <i class="fas fa-phone-alt" />
+                <i className="fas fa-phone-alt" />
                 +(84)986442833
               </NavLink>
             </NavItem>
@@ -47,7 +51,7 @@ function HeaderTop() {
 
             <NavItem>
               <NavLink>
-                <i class="fas fa-headset"></i> CHĂM SÓC KHÁCH HÀNG
+                <i className="fas fa-headset"></i> CHĂM SÓC KHÁCH HÀNG
               </NavLink>
             </NavItem>
           </Nav>
@@ -55,7 +59,7 @@ function HeaderTop() {
           <Nav navbar style={{ transform: isOpen ? '' : 'translateX(-10%)'}}>
             <NavItem>
               <NavLink style={{ position: "relative" }}>
-                <i class="far fa-bell"></i> THÔNG BÁO
+                <i className="far fa-bell"></i> THÔNG BÁO
                 <span
                   style={{
                     backgroundColor: "#ff9f28",
@@ -73,33 +77,44 @@ function HeaderTop() {
               </NavLink>
             </NavItem>
 
-            <NavItem>
-              <NavLink>
-                 ĐĂNG KÝ
-              </NavLink>
-            </NavItem>
-            <span style={{color:'black', transform:'translateY(5px)'}}> |
-            </span>
-            <NavItem>
-              <NavLink onClick={showModal}>
-                ĐĂNG NHẬP
-              </NavLink>
-                  <>
+            {
+              user ? 
+              (
+                <Logout user={user}/> 
+              ): (
+                <>
+                  <NavItem>
+                    <NavLink>
+                      ĐĂNG KÝ
+                    </NavLink>
+                  </NavItem>
+
+                 {!isOpen && <span style={{color:'black', transform:'translateY(5px)'}}> |  </span>} 
+
+                  <NavItem>
+                    <NavLink onClick={showModal}>
+                      ĐĂNG NHẬP
+                    </NavLink>
+                  </NavItem>
+
                   <Modal visible={isModalVisible} onCancel={showModal} footer={null} width={450} style={{borderRadius:10}}>
-                    <Login/>
-                  </Modal>
+                      <Login getUsersLogin={getUsersLogin}/>
+                    </Modal>
                 </>
-            </NavItem>
+              )
+            }
+                   
+            
 
             <UncontrolledDropdown inNavbar nav>
               <DropdownToggle caret nav>
                 <i
-                  class="fas fa-language"
+                  className="fas fa-language"
                   style={{ fontSize: 22, color: "#ff9f28" }}
                 ></i>{" "}
                 LANGUAGE
               </DropdownToggle>
-              <DropdownMenu right>
+              <DropdownMenu>
                 <DropdownItem>Tiếng Việt</DropdownItem>
                 <DropdownItem divider />
                 <DropdownItem>English</DropdownItem>
