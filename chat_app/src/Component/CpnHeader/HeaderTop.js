@@ -12,7 +12,7 @@ import {
   DropdownMenu,
   DropdownItem,
 } from "reactstrap";
-import { Modal,Avatar} from 'antd';
+import { Modal, Avatar } from "antd";
 import Login from "./Login";
 import Logout from "./Logout";
 
@@ -28,26 +28,40 @@ function HeaderTop() {
   const showModal = () => {
     setIsModalVisible(!isModalVisible);
   };
-  const getUsersLogin =(props) =>{
-    setUser(props)
-  }
+  const getUsersLogin = (props) => {
+    setUser(props);
+  };
   return (
     <>
-      <Navbar color="red" expand="lg" light style={{backgroundColor:'#dfdedd',height:43}}>
+      <Navbar
+        color="red"
+        expand="lg"
+        light
+        style={{ backgroundColor: "#dfdedd", height: 43 }}
+      >
         {/* <NavbarBrand href="/"><img src={img} style={{width:150}} /> </NavbarBrand> */}
 
-        <NavbarToggler onClick={noRefCheck} style={{fontSize:16,color:'#dfd', transform:'translateY(-3px)'}}/>
+        <NavbarToggler
+          onClick={noRefCheck}
+          style={{ fontSize: 16, color: "#dfd", transform: "translateY(-3px)" }}
+        />
 
-        <Collapse navbar isOpen={isOpen} style={{transform: isOpen ? 'translateX(10px)' : ''}}>
-          <Nav className="me-auto" navbar style={{ transform: isOpen ? '' : 'translateX(15%)'}}>
+        <Collapse
+          navbar
+          isOpen={isOpen}
+          style={{ transform: isOpen ? "translateX(10px)" : "" }}
+        >
+          <Nav
+            className="me-auto"
+            navbar
+            style={{ transform: isOpen ? "" : "translateX(15%)" }}
+          >
             <NavItem>
-              <NavLink href="/components/" >
+              <NavLink href="/components/">
                 <i className="fas fa-phone-alt" />
                 +(84)986442833
               </NavLink>
             </NavItem>
-
-            
 
             <NavItem>
               <NavLink>
@@ -56,7 +70,7 @@ function HeaderTop() {
             </NavItem>
           </Nav>
           {/* ============================================================= */}
-          <Nav navbar style={{ transform: isOpen ? '' : 'translateX(-10%)'}}>
+          <Nav navbar style={{ transform: isOpen ? "" : "translateX(-10%)" }}>
             <NavItem>
               <NavLink style={{ position: "relative" }}>
                 <i className="far fa-bell"></i> THÔNG BÁO
@@ -77,34 +91,28 @@ function HeaderTop() {
               </NavLink>
             </NavItem>
 
-            {
-              user ? 
-              (
-                <Logout user={user}/> 
-              ): (
-                <>
-                  <NavItem>
-                    <NavLink>
-                      ĐĂNG KÝ
-                    </NavLink>
-                  </NavItem>
+            {user ? (
+              <Logout user={user} />
+            ) : (
+              <>
+                <NavItem>
+                  <NavLink>ĐĂNG KÝ</NavLink>
+                </NavItem>
 
-                 {!isOpen && <span style={{color:'black', transform:'translateY(5px)'}}> |  </span>} 
+                {!isOpen && (
+                  <span
+                    style={{ color: "black", transform: "translateY(5px)" }}
+                  >
+                    {" "}
+                    |{" "}
+                  </span>
+                )}
 
-                  <NavItem>
-                    <NavLink onClick={showModal}>
-                      ĐĂNG NHẬP
-                    </NavLink>
-                  </NavItem>
-
-                  <Modal visible={isModalVisible} onCancel={showModal} footer={null} width={450} style={{borderRadius:10}}>
-                      <Login getUsersLogin={getUsersLogin}/>
-                    </Modal>
-                </>
-              )
-            }
-                   
-            
+                <NavItem>
+                  <NavLink onClick={showModal}>ĐĂNG NHẬP</NavLink>
+                </NavItem>
+              </>
+            )}
 
             <UncontrolledDropdown inNavbar nav>
               <DropdownToggle caret nav>
@@ -120,7 +128,6 @@ function HeaderTop() {
                 <DropdownItem>English</DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>
-            
           </Nav>
         </Collapse>
       </Navbar>

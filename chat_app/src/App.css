@@ -1,27 +1,36 @@
-.ant-modal-body{
+.ant-modal-body {
   padding: 13px !important;
 }
 .ant-input-affix-wrapper:not(.ant-input-affix-wrapper-disablead):hover {
   border-color: rgb(151, 151, 151) !important;
   border-right-width: 1px !important;
-  z-index: 1 !important;; 
+  z-index: 1 !important;
 }
 /* .ant-input-affix-wrapper:hover {
   border-color: #11f51c !important;
   border-right-width: 1px !important;
 } */
-.bt__forceUpdate_lg{         /* Lúc chưa điền text vào input Login */
+.bt__forceUpdate_lg {
+  /* Lúc chưa điền text vào input Login */
   width: 100%;
-  border:none !important;
+  border: none !important;
   background: #fad3a4 !important;
 }
-.bt__forceUpdate_lg_ok {  /* ĐÃ điền text vào input Login */
+.bt__forceUpdate_lg_ok {
+  /* ĐÃ điền text vào input Login */
   width: 100%;
-  border:none !important;
+  border: none !important;
   background: #ffb254 !important;
   text-shadow: 0 -1px 0 rgb(0 0 0 / 12%);
   box-shadow: 0 2px 0 rgb(0 0 0 / 5%);
 }
-.ant-modal-content{ /* Thẻ bao bọc Tổng modal Login */
+.ant-modal-content {
+  /* Thẻ bao bọc Tổng modal Login */
   border-radius: 7px !important;
+}
+.bgrAll {
+  background-color: #ff475f;
+}
+.text-al-ct {
+  text-align: center;
 }
