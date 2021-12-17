@@ -1,13 +1,27 @@
-import React from "react";
+import React, { useContext, createContext, useEffect } from "react";
 import HeaderTop from "./Component/CpnHeader/HeaderTop";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Login from "./Component/CpnHeader/Login";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Login from "./Component/Handle/Login";
 import "./App.css";
 import "antd/dist/antd.css";
+import { ThemeProvides } from "./ThemeProvides";
+import Loadding from "./Component/Loading/Loadding";
+
 function App() {
+  const [loading, setLoading] = React.useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(!loading);
+    }, 1000);
+    return () => {};
+  }, [loading]);
+
   return (
-    <>
-      <BrowserRouter>
+    <ThemeProvides>
+      {loading ? (
+        <Loadding />
+      ) : (
         <div>
           <div
             style={{
@@ -16,17 +30,18 @@ function App() {
             }}
             className="bgrAll text-al-ct"
           >
-            <img src="https://icms-image.slatic.net/images/ims-web/e525beb6-8dab-4e1f-8fef-971d592cf996.jpg" />
+            <img
+              src="https://icms-image.slatic.net/images/ims-web/e525beb6-8dab-4e1f-8fef-971d592cf996.jpg"
+              alt="hong"
+            />
           </div>
           <HeaderTop />
-          <Routes>
-            <Route exact strict path="/" element={<Login />} />
-            <Route exact strict path="/phan2" element={<div>2</div>} />
-            {/* <Route exact strict path="/login" element={ <Login /> } /> */}
-          </Routes>
+          <Switch>
+            <Route path="/login" component={Login} />
+          </Switch>
         </div>
-      </BrowserRouter>
-    </>
+      )}
+    </ThemeProvides>
   );
 }
 

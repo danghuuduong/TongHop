@@ -1,44 +1,28 @@
 import React from "react";
-// import img from '../Images/logo.png'
 import {
   Collapse,
   Navbar,
   NavbarToggler,
   Nav,
   NavItem,
-  NavLink,
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
 } from "reactstrap";
-import { Modal, Avatar } from "antd";
-import Login from "./Login";
-import Logout from "./Logout";
+import { NavLink } from "react-router-dom";
+import { ThemeContext } from "../../ThemeProvides";
+import Logout from "../Handle/Logout";
 
-// https://codesandbox.io/s/stupefied-leftpad-se7e3?file=/src/App.js
 function HeaderTop() {
+  const Context = React.useContext(ThemeContext);
   const [isOpen, setIsOpen] = React.useState(false);
-  const [isModalVisible, setIsModalVisible] = React.useState(false);
-  const [user, setUser] = React.useState(null);
-
   const noRefCheck = () => {
     setIsOpen(!isOpen);
   };
-  const showModal = () => {
-    setIsModalVisible(!isModalVisible);
-  };
-  const getUsersLogin = (props) => {
-    setUser(props);
-  };
   return (
     <>
-      <Navbar
-        color="red"
-        expand="lg"
-        light
-        style={{ backgroundColor: "#dfdedd", height: 43 }}
-      >
+      <Navbar color="red" expand="lg" light style={{ height: 43 }}>
         {/* <NavbarBrand href="/"><img src={img} style={{width:150}} /> </NavbarBrand> */}
 
         <NavbarToggler
@@ -49,7 +33,11 @@ function HeaderTop() {
         <Collapse
           navbar
           isOpen={isOpen}
-          style={{ transform: isOpen ? "translateX(10px)" : "" }}
+          style={{
+            backgroundColor: "white",
+            padding: 0,
+            margin: 0,
+          }}
         >
           <Nav
             className="me-auto"
@@ -57,22 +45,27 @@ function HeaderTop() {
             style={{ transform: isOpen ? "" : "translateX(15%)" }}
           >
             <NavItem>
-              <NavLink href="/components/">
+              <div href="/components/">
                 <i className="fas fa-phone-alt" />
                 +(84)986442833
-              </NavLink>
+              </div>
             </NavItem>
 
             <NavItem>
-              <NavLink>
+              <NavLink end to="/hepy">
                 <i className="fas fa-headset"></i> CHĂM SÓC KHÁCH HÀNG
               </NavLink>
             </NavItem>
           </Nav>
           {/* ============================================================= */}
-          <Nav navbar style={{ transform: isOpen ? "" : "translateX(-10%)" }}>
+          <Nav
+            navbar
+            style={{
+              transform: isOpen ? "" : "translateX(-10%)",
+            }}
+          >
             <NavItem>
-              <NavLink style={{ position: "relative" }}>
+              <div style={{ position: "relative" }}>
                 <i className="far fa-bell"></i> THÔNG BÁO
                 <span
                   style={{
@@ -88,38 +81,47 @@ function HeaderTop() {
                 >
                   1
                 </span>
-              </NavLink>
+              </div>
             </NavItem>
 
-            {user ? (
-              <Logout user={user} />
-            ) : (
-              <>
-                <NavItem>
-                  <NavLink>ĐĂNG KÝ</NavLink>
-                </NavItem>
+            <>
+              {Context.user ? (
+                <Logout />
+              ) : (
+                <>
+                  <NavItem>
+                    <NavLink end to="/register">
+                      ĐĂNG KÝ
+                    </NavLink>
+                  </NavItem>
 
-                {!isOpen && (
-                  <span
-                    style={{ color: "black", transform: "translateY(5px)" }}
-                  >
-                    {" "}
-                    |{" "}
-                  </span>
-                )}
+                  {!isOpen && (
+                    <span
+                      style={{ color: "black", transform: "translateY(-2px)" }}
+                    ></span>
+                  )}
 
-                <NavItem>
-                  <NavLink onClick={showModal}>ĐĂNG NHẬP</NavLink>
-                </NavItem>
-              </>
-            )}
+                  <NavItem>
+                    <NavLink end to="/login">
+                      ĐĂNG NHẬP
+                    </NavLink>
+                  </NavItem>
+                </>
+              )}
+            </>
 
             <UncontrolledDropdown inNavbar nav>
               <DropdownToggle caret nav>
-                <i
+                {/* <i
                   className="fas fa-language"
                   style={{ fontSize: 22, color: "#ff9f28" }}
-                ></i>{" "}
+                ></i>{" "} */}
+                <img
+                  src="/Images/english.png"
+                  alt="hong"
+                  width={25}
+                  style={{ marginRight: 5 }}
+                />
                 LANGUAGE
               </DropdownToggle>
               <DropdownMenu>

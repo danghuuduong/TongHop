@@ -34,3 +34,13 @@
 .text-al-ct {
   text-align: center;
 }
+
+.nav-item {
+  text-decoration: none;
+  margin: 0 10px;
+}
+.nav-item a {
+  text-decoration: none;
+  color: black;
+  padding: 0 !important;
+}

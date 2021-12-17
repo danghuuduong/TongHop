@@ -2,27 +2,20 @@ import React from "react";
 import { Container, Row, Col } from "reactstrap";
 import { Form, Input, Button, Typography, Avatar } from "antd";
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
-import firebase, { auth } from "../../Firebase/config";
-import google from "../Images/google.png";
-import logo from "../Images/logo.png";
-const Google_provider = new firebase.auth.GoogleAuthProvider();
+import { ThemeContext } from "../../ThemeProvides";
 
 function Login() {
-  const [user, setUser] = React.useState(null);
   const [form] = Form.useForm();
   const [, forceUpdate] = React.useState({});
+  //-----------------------------------------------
+  const Context = React.useContext(ThemeContext);
+
   const onFinish = (values) => {};
 
   //-----------------------------------------------
 
-  const hanldeGoogle = () => {
-    auth.signInWithPopup(Google_provider);
-  };
   React.useEffect(() => {
     forceUpdate({});
-    auth.onAuthStateChanged((user) => {
-      setUser(user?._delegate);
-    });
   }, []);
   return (
     <>
@@ -39,7 +32,7 @@ function Login() {
             }}
           >
             <div style={{ textAlign: "center" }}>
-              <img src={logo} width={300} />
+              <img src="/Images/logo.png" alt="logo" width={300} />
               <h1>Shop Oa Oa</h1>
               <h4>
                 <div>Sàn Điện tử được đánh giá chất lượng 5 sao</div>
@@ -170,17 +163,20 @@ function Login() {
                       fontSize: 18,
                       borderRadius: 3,
                     }}
-                    onClick={hanldeGoogle}
                   >
                     <img
-                      src={google}
+                      src="/Images/google.png"
                       style={{
                         width: 34,
                         backgroundColor: "white",
                         transform: "translateX(-13px)",
                       }}
+                      alt="google"
                     />
-                    <span style={{ marginLeft: 10, color: "white" }}>
+                    <span
+                      style={{ marginLeft: 10, color: "white" }}
+                      onClick={Context.hanldeGoogle}
+                    >
                       Google
                     </span>
                   </Button>
