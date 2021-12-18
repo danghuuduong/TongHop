@@ -11,16 +11,16 @@ function ThemeProvides({ children }) {
   React.useEffect(() => {
     auth.onAuthStateChanged((user) => {
       setUser(user?._delegate);
+      history.push("/");
     });
   }, []);
   const hanldeGoogle = () => {
     auth.signInWithPopup(Google_provider);
-    history.push("/");
   };
 
   const hanldeGoogle_signOut = () => {
     auth.signOut(Google_provider);
-    history.push("/");
+    history.push("/login");
   };
 
   // Truyền--------------------------------------------------------------------

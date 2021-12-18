@@ -20,7 +20,7 @@ function Login() {
   return (
     <>
       <Container fluid>
-        <Row style={{ backgroundColor: "#eff0f5" }}>
+        <Row className="bgr_gray">
           <Col
             xs={6}
             style={{

@@ -1,3 +1,10 @@
+:root {
+  --bgr--common: #eff0f5;
+}
+.bgrAll {
+  background-color: #ff475f;
+}
+/* -------------------------------------------------------------- */
 .ant-modal-body {
   padding: 13px !important;
 }
@@ -10,6 +17,12 @@
   border-color: #11f51c !important;
   border-right-width: 1px !important;
 } */
+.ant-modal-content {
+  /* Thẻ bao bọc Tổng modal Login */
+  border-radius: 7px !important;
+}
+/* -------------------------------------------------------------- */
+
 .bt__forceUpdate_lg {
   /* Lúc chưa điền text vào input Login */
   width: 100%;
@@ -24,23 +37,30 @@
   text-shadow: 0 -1px 0 rgb(0 0 0 / 12%);
   box-shadow: 0 2px 0 rgb(0 0 0 / 5%);
 }
-.ant-modal-content {
-  /* Thẻ bao bọc Tổng modal Login */
-  border-radius: 7px !important;
-}
-.bgrAll {
-  background-color: #ff475f;
-}
+
+/* -------------------------------------------------------------- */
+
 .text-al-ct {
   text-align: center;
+}
+.pd0_importan {
+  padding: 0px !important;
 }
 
 .nav-item {
   text-decoration: none;
-  margin: 0 10px;
+  margin: 10px 8px;
 }
 .nav-item a {
   text-decoration: none;
   color: black;
   padding: 0 !important;
+}
+p {
+  font-size: 14px;
+}
+/* -------------------------------------------------------------- */
+
+.bgr_gray {
+  background-color: var(--bgr--common) !important;
 }

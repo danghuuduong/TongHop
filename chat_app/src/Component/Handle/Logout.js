@@ -14,8 +14,8 @@ function Logout() {
     <UncontrolledDropdown inNavbar nav>
       <DropdownToggle caret nav>
         <span style={{ position: "relative" }}>
-          <span style={{ position: "absolute", top: -7, left: 0 }}>
-            <Avatar size={35} src={Context.user.photoURL} />
+          <span style={{ position: "absolute", top: -4, left: 0 }}>
+            <Avatar size={30} src={Context.user.photoURL} />
           </span>
         </span>
 

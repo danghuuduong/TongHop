@@ -1,11 +1,13 @@
-import React, { useContext, createContext, useEffect } from "react";
-import HeaderTop from "./Component/CpnHeader/HeaderTop";
+import React, { useEffect } from "react";
+import HeaderTop from "./Component/Bodys/HeaderTop";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Login from "./Component/Handle/Login";
 import "./App.css";
 import "antd/dist/antd.css";
 import { ThemeProvides } from "./ThemeProvides";
 import Loadding from "./Component/Loading/Loadding";
+import HeaderCenter from "./Component/Bodys/HeaderCenter";
+import Body from "./Component/Bodys/Body";
 
 function App() {
   const [loading, setLoading] = React.useState(true);
@@ -15,7 +17,7 @@ function App() {
       setLoading(!loading);
     }, 1000);
     return () => {};
-  }, [loading]);
+  }, []);
 
   return (
     <ThemeProvides>
@@ -35,9 +37,13 @@ function App() {
               alt="hong"
             />
           </div>
-          <HeaderTop />
+          <div className="bgr_gray pd0_importan">
+            <HeaderTop />
+          </div>
+          <HeaderCenter />
           <Switch>
-            <Route path="/login" component={Login} />
+            <Route exact path="/" component={Body} />
+            <Route exact path="/login" component={Login} />
           </Switch>
         </div>
       )}
