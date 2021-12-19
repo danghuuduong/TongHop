@@ -15,7 +15,7 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       setLoading(!loading);
-    }, 1000);
+    }, 500);
     return () => {};
   }, []);
 
@@ -28,7 +28,6 @@ function App() {
           <div
             style={{
               maxWidth: "100%",
-              height: "auto",
             }}
             className="bgrAll text-al-ct"
           >
@@ -41,6 +40,7 @@ function App() {
             <HeaderTop />
           </div>
           <HeaderCenter />
+          
           <Switch>
             <Route exact path="/" component={Body} />
             <Route exact path="/login" component={Login} />

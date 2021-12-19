@@ -47,6 +47,12 @@ function HeaderTop() {
             >
               <Nav className="me-auto" navbar>
                 <NavItem>
+                  <NavLink end to="/">
+                    TRANG CHỦ
+                  </NavLink>
+                </NavItem>
+
+                <NavItem>
                   <div href="/components/">
                     <i className="fas fa-phone-alt" />
                     +(84)986442833

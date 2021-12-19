@@ -32,7 +32,7 @@ function Login() {
             }}
           >
             <div style={{ textAlign: "center" }}>
-              <img src="/Images/logo.png" alt="logo" width={300} />
+              <img src="/Images/logo.png" alt="logo" width={250} />
               <h1>Shop Oa Oa</h1>
               <h4>
                 <div>Sàn Điện tử được đánh giá chất lượng 5 sao</div>
@@ -43,14 +43,14 @@ function Login() {
           <Col xs={6}>
             <div
               style={{
-                margin: 70,
+                margin: "40px 70px",
                 backgroundColor: "white",
-                padding: 50,
+                padding: 30,
                 borderRadius: 5,
                 width: 450,
               }}
             >
-              <Typography.Title level={2}>ĐĂNG NHẬP</Typography.Title>
+              <Typography.Title level={4}>ĐĂNG NHẬP</Typography.Title>
               <Form name="basic" onFinish={onFinish} form={form}>
                 <Form.Item
                   name="username"

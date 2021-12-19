@@ -2,10 +2,13 @@ import React from "react";
 import "./style.css";
 function Loadding() {
   return (
-    <div className="ring">
-      Loading
-      <span></span>
+    <div style={{ backgroundColor:'black', width:'100%',height:'100vh'}}>
+      <div className="ring" >
+            Loading
+            <span></span>
+          </div>
     </div>
+    
   );
 }
 

@@ -4,6 +4,10 @@
 .bgrAll {
   background-color: #ff475f;
 }
+
+.bgr_gray {
+  background-color: var(--bgr--common) !important;
+}
 /* -------------------------------------------------------------- */
 .ant-modal-body {
   padding: 13px !important;
@@ -61,6 +65,48 @@ p {
 }
 /* -------------------------------------------------------------- */
 
-.bgr_gray {
-  background-color: var(--bgr--common) !important;
+.production{
+  margin-bottom: 24px;
+  cursor: pointer;
+}
+.production_img{
+}
+.production_link{
+  position: absolute;
+  bottom: -120px;
+  left:5px;
+  transition: bottom 0.5s;
+  background-color: black;
+  width: 95%;
+  height: 100px;
+}
+.production_img:hover .production_link{
+  bottom: 0px;
+}
+.production_img:hover {
+  opacity: 0.6;
+  transform: scale(1.01);
+}
+/* -------------------------------------------------------------- */
+.card_products{
+  border: 1px solid rgb(141, 121, 121);
+  display: inline-block;
+  width: 270px !important;
+  height: 350px;
+  z-index: 1;
+  box-shadow: 1px 1px 10px 1px rgb(157, 156, 156);
+  background-color: white;
+  border-radius: 7px;
+  overflow-y: auto;
+  position: absolute !important;
+  right: 52px;
+  top: 20px;
+  display: none;
+  text-align: center;
+}
+.icon_card:hover .card_products {
+  display: block;
+}
+.icon_card{
+  cursor: pointer;
 }
