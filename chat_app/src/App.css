@@ -1,3 +1,4 @@
+
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
@@ -5,16 +6,21 @@ body {
   color: #333;
   background-color: #fff;
 }
+html{
+  font-size: 14px;
+}
 :root {
   --bgr--vang: #f7941e;
   --color-red: #c92127;
+  --color-xam:#b1a29c;
+  --color-xam-nhat:#d9d9d9;
 }
 .bgrAll {
   background-color: #ceae7f;
 }
 
 .bgr_gray {
-  background-color: #eff0f5 !important;
+  background-color: #eff0f5;
 }
 .bgr_common {
   background-color: var(--bgr--vang);
@@ -53,7 +59,7 @@ body {
   box-shadow: 0 2px 0 rgb(0 0 0 / 5%);
 }
 .ant-input-affix-wrapper-lg {
-  border: 1px solid #b1a29c !important;
+  border: 1px solid var(--color-xam) !important;
   box-shadow: none !important;
 }
 .ant-input-search-button {
@@ -63,7 +69,7 @@ body {
 
 /* -------------------------------------------------------------- */
 .text_pirive {
-  font-size: 16.5;
+  font-size: 15.5px;
   color: var(--color-red);
   font-weight: 700;
 }
@@ -92,8 +98,9 @@ p {
 .production {
   cursor: pointer;
   border: 1px solid #d2d4d5;
-  margin: 0 5px 10px 5px;
-  padding: 5px 0;
+  margin: 7px;
+  padding: 7px;
+  /* width: 222px; */
 }
 .production_img {
   text-align: center;
@@ -116,13 +123,15 @@ p {
   border-radius: 15px;
   border: none;
   font-size: 14px;
+  box-shadow: 5px 5px 15px 5px var(--color-red)
+
 }
-.production_img:hover .production_link {
-  bottom: 40px;
+.production:hover .production_link {
+  bottom: 30px;
 }
 .production_img:hover {
   opacity: 0.8;
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 .sold {
   /* background-color: var(--color-red); */
@@ -132,12 +141,13 @@ p {
     rgb(165, 160, 160) 70%
   );
   border-radius: 17px;
-  padding: 0 20px;
   color: #fff;
+  width: 90px;
+  text-align: center;
 }
 /* -------------------------------------------------------------- */
 .card_products {
-  border: 1px solid rgb(141, 121, 121);
+  /* border: 1px solid rgb(141, 121, 121); */
   display: inline-block;
   width: 270px !important;
   height: 350px;
@@ -148,7 +158,7 @@ p {
   overflow-y: auto;
   position: absolute !important;
   right: 52px;
-  top: 20px;
+  top: 30px;
   display: none;
   text-align: center;
 }
@@ -185,11 +195,10 @@ p {
   color: var(--bgr--vang);
   border-radius: 16px;
   border: 1px solid var(--bgr--vang);
-  font-size: 16.5px;
-  font-weight: 650;
+  font-size: 15.5px;
+  font-weight: 600;
   height: 35px;
   width: 100%;
-  line-height: 35px;
   margin: 7px 0;
   transition: 0.4s;
   background-color: #fff;
@@ -206,4 +215,18 @@ p {
   text-align: center;
   line-height: 40px;
   font-weight: 700;
+}
+/* -------------------------------------- */
+.ant-select-selector{
+  box-shadow: none !important;
+  border-color: var(--color-xam-nhat) !important;
+}
+.ant-select-selector:hover{
+  box-shadow: none !important;
+  border-color: var(--color-xam-nhat) !important;
+}
+/* -------------- */
+.paging{
+  text-align: end;
+  margin:10px 50px 100px 0px
 }

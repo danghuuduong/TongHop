@@ -23,7 +23,7 @@ function HeaderCenter() {
       <Row style={{ position: "relative" }}>
         <Col>
           <NavLink to="/">
-            <img src="/Images/logo.png" alt="logo" width={120} />
+            <img src="/Images/logo.png" alt="logo" width={90} />
           </NavLink>
         </Col>
         <Col

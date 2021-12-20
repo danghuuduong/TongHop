@@ -23,9 +23,9 @@ function HeaderTop() {
   };
   return (
     <Container>
-      <Row className="bgr_gray">
+      <Row className="bgr_gray" style={{backgroundColor:isOpen ? 'red' : ''}}>
         <Col className="pd0_importan">
-          <Navbar color="whie" expand="lg" light style={{ height: 37 }}>
+          <Navbar color="whie" expand="lg" light style={{ height: 35 }}>
             {/* <NavbarBrand href="/"><img src={img} style={{width:150}} /> </NavbarBrand> */}
 
             <NavbarToggler
@@ -33,7 +33,7 @@ function HeaderTop() {
               style={{
                 fontSize: 16,
                 color: "#dfd",
-                transform: "translateY(-6px)",
+                transform: "translateY(-5px)",
               }}
             ></NavbarToggler>
 
@@ -43,6 +43,7 @@ function HeaderTop() {
               style={{
                 padding: 0,
                 margin: 0,
+                zIndex:1,
               }}
             >
               <Nav className="me-auto" navbar>
