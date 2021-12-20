@@ -5,26 +5,22 @@ import { AudioOutlined } from "@ant-design/icons";
 // import { useHistory } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import { ThemeContext } from "../../ThemeProvides";
-import Card_lish from "./Card_lish";
+import CardList from "./Card_lish";
 
 const { Search } = Input;
 
-const suffix = (
-  <AudioOutlined
-    style={{
-      fontSize: 16,
-      color: "#1890ff",
-    }}
-  />
-);
+const suffix = <i style={{ fontSize: 25 }} className="fas fa-microphone" />;
+const search = <i style={{ fontSize: 18 }} className="fas fa-search" />;
+
 function HeaderCenter() {
   const Context = React.useContext(ThemeContext);
   const onSearch = (value) => {
-    alert(`Không tìm thấy từ khóa: "${value}"`)
-  }
+    alert(`Không tìm thấy từ khóa: "${value}"`);
+  };
+  console.log(Context.products);
   return (
     <Container>
-      <Row style={{ position:'relative'}}>
+      <Row style={{ position: "relative" }}>
         <Col>
           <NavLink to="/">
             <img src="/Images/logo.png" alt="logo" width={120} />
@@ -41,7 +37,7 @@ function HeaderCenter() {
           <Space direction="vertical" style={{ width: "100%" }}>
             <Search
               placeholder="Tìm kiếm..."
-              enterButton="Search"
+              enterButton={search}
               size="large"
               suffix={suffix}
               onSearch={onSearch}
@@ -55,19 +51,49 @@ function HeaderCenter() {
             justifyContent: "end",
           }}
         >
-          <div style={{ paddingRight: 24,position:'relative' }} className="icon_card" >
-            <i className="fas fa-shopping-cart" style={{ fontSize: 40 }}> </i>
-            {
-              Context.products.length >= 1 && <span style={{ position:'absolute',fontSize:16,left:0,top:-5,fontWeight:700,
-              backgroundColor:'red',color:'white',width:25,textAlign:'center',borderRadius:7}}>{Context.products.length}</span>
-            }
-           <div className="card_products">
-             <Card_lish/>
+          <div className="icon_card">
+            <span>
+              {" "}
+              <i className="fas fa-shopping-cart"></i>{" "}
+            </span>
+            <span>GIỎ HÀNG</span>
+            {Context.products.length >= 1 && (
+              <span className="count_cart">
+                {/* https://www.fahasa.com/ */}
+
+                {/* {Context.products[0].sl ? (
+                  <span>
+                    {Context.products.length > 1 ? (
+                      <>
+                        {Context.products?.reduce(
+                          (total, value) => (total = total + (value.sl ?? 1)),
+                          0
+                        )}
+                      </>
+                    ) : (
+                      <>{Context.products[0].sl}</>
+                    )}
+                  </span>
+                ) : (
+                  <span>1</span>
+                )} */}
+
+                {Context.products.reduce(
+                  (total, value) => (total += value.sl ?? 1),
+                  0
+                )}
+
+                {/* {Context.products
+                  .map((x) => x.sl ?? 1)
+                  .reduce((total, value) => (total = total + value), 0)} */}
+              </span>
+            )}
+            <div className="card_products">
+              <CardList />
             </div>
           </div>
         </Col>
       </Row>
-      
     </Container>
   );
 }

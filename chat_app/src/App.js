@@ -32,7 +32,7 @@ function App() {
             className="bgrAll text-al-ct"
           >
             <img
-              src="https://icms-image.slatic.net/images/ims-web/e525beb6-8dab-4e1f-8fef-971d592cf996.jpg"
+              src="https://cdn0.fahasa.com/media/wysiwyg/Thang-12-2021/BigSale_T1221_mainbanner_edit timeline_1263x60.jpg"
               alt="hong"
             />
           </div>
@@ -40,7 +40,7 @@ function App() {
             <HeaderTop />
           </div>
           <HeaderCenter />
-          
+
           <Switch>
             <Route exact path="/" component={Body} />
             <Route exact path="/login" component={Login} />
