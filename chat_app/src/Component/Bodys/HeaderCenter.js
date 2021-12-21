@@ -1,11 +1,9 @@
 import React from "react";
 import { Container, Row, Col } from "reactstrap";
 import { Input, Space } from "antd";
-import { AudioOutlined } from "@ant-design/icons";
-// import { useHistory } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import { ThemeContext } from "../../ThemeProvides";
-import CardList from "./Card_lish";
+import CardList from "../Cart/Card_lish";
 
 const { Search } = Input;
 
@@ -17,7 +15,6 @@ function HeaderCenter() {
   const onSearch = (value) => {
     alert(`Không tìm thấy từ khóa: "${value}"`);
   };
-  console.log(Context.products);
   return (
     <Container>
       <Row style={{ position: "relative" }}>
@@ -37,9 +34,10 @@ function HeaderCenter() {
           <Space direction="vertical" style={{ width: "100%" }}>
             <Search
               placeholder="Tìm kiếm..."
+              // enterButton={search}
               enterButton={search}
               size="large"
-              suffix={suffix}
+              // suffix={suffix}
               onSearch={onSearch}
             />
           </Space>
@@ -51,47 +49,25 @@ function HeaderCenter() {
             justifyContent: "end",
           }}
         >
-          <div className="icon_card">
-            <span>
-              {" "}
-              <i className="fas fa-shopping-cart"></i>{" "}
-            </span>
-            <span>GIỎ HÀNG</span>
-            {Context.products.length >= 1 && (
-              <span className="count_cart">
-                {/* https://www.fahasa.com/ */}
-
-                {/* {Context.products[0].sl ? (
-                  <span>
-                    {Context.products.length > 1 ? (
-                      <>
-                        {Context.products?.reduce(
-                          (total, value) => (total = total + (value.sl ?? 1)),
-                          0
-                        )}
-                      </>
-                    ) : (
-                      <>{Context.products[0].sl}</>
-                    )}
-                  </span>
-                ) : (
-                  <span>1</span>
-                )} */}
-
-                {Context.products.reduce(
-                  (total, value) => (total += value.sl ?? 1),
-                  0
-                )}
-
-                {/* {Context.products
-                  .map((x) => x.sl ?? 1)
-                  .reduce((total, value) => (total = total + value), 0)} */}
+          <NavLink end to="/checkout/cart">
+            <div className="icon_card">
+              <span>
+                {" "}
+                <i className="fas fa-shopping-cart"></i>{" "}
               </span>
-            )}
-            <div className="card_products">
-              <CardList />
+              <span style={{ color: "#f7941e" }}>GIỎ HÀNG</span>
+              {Context.products.length >= 1 && (
+                <span className="count_cart">
+                  {Context.products
+                    .map((x) => x.sl ?? 1)
+                    .reduce((total, value) => (total = total + value), 0)}
+                </span>
+              )}
+              <div className="card_products">
+                <CardList />
+              </div>
             </div>
-          </div>
+          </NavLink>
         </Col>
       </Row>
     </Container>

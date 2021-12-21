@@ -1,4 +1,3 @@
-
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
@@ -6,17 +5,20 @@ body {
   color: #333;
   background-color: #fff;
 }
-html{
+html {
   font-size: 14px;
 }
 :root {
   --bgr--vang: #f7941e;
   --color-red: #c92127;
-  --color-xam:#b1a29c;
-  --color-xam-nhat:#d9d9d9;
+  --color-xam: #b1a29c;
+  --color-xam-nhat: #d9d9d9;
 }
 .bgrAll {
   background-color: #ceae7f;
+}
+.yellow {
+  color: var(--bgr--vang);
 }
 
 .bgr_gray {
@@ -28,6 +30,9 @@ html{
 /* -------------------------------------------------------------- */
 .ant-modal-body {
   padding: 13px !important;
+}
+a {
+  text-decoration: none !important;
 }
 .ant-input-affix-wrapper:not(.ant-input-affix-wrapper-disablead):hover {
   border-color: rgb(151, 151, 151) !important;
@@ -48,15 +53,16 @@ html{
   /* Lúc chưa điền text vào input Login */
   width: 100%;
   border: none !important;
-  background: #fad3a4 !important;
+  background: var(--color-xam-nhat) !important;
 }
 .bt__forceUpdate_lg_ok {
   /* ĐÃ điền text vào input Login */
   width: 100%;
   border: none !important;
-  background: #ffb254 !important;
+  background: var(--bgr--vang) !important;
   text-shadow: 0 -1px 0 rgb(0 0 0 / 12%);
   box-shadow: 0 2px 0 rgb(0 0 0 / 5%);
+  color: #fff;
 }
 .ant-input-affix-wrapper-lg {
   border: 1px solid var(--color-xam) !important;
@@ -64,6 +70,10 @@ html{
 }
 .ant-input-search-button {
   background-color: var(--bgr--vang) !important;
+  border: none !important;
+}
+.ant-input-search-button:hover {
+  background-color: red !important;
   border: none !important;
 }
 
@@ -84,6 +94,7 @@ html{
 .nav-item {
   text-decoration: none;
   margin: 10px 8px;
+  cursor: pointer;
 }
 .nav-item a {
   text-decoration: none;
@@ -123,8 +134,7 @@ p {
   border-radius: 15px;
   border: none;
   font-size: 14px;
-  box-shadow: 5px 5px 15px 5px var(--color-red)
-
+  box-shadow: 5px 5px 15px 5px var(--color-red);
 }
 .production:hover .production_link {
   bottom: 30px;
@@ -216,22 +226,44 @@ p {
   line-height: 40px;
   font-weight: 700;
 }
+/* ---------------------------- */
+.ClickOncart_img {
+  border: 1px solid var(--color-xam-nhat);
+  margin: 0 15px 0px 15px;
+}
+/* ---------------------------- */
+
+.up_dow_quantity {
+  border: 1px solid var(--color-xam-nhat);
+  border-radius: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.up_dow_quantity {
+  padding: 0 5px;
+}
+.up_dow_quantity span {
+  transform: translateY(-2px);
+  font-size: 18px;
+  cursor: pointer;
+}
 /* -------------------------------------- */
-.ant-select-selector{
+.ant-select-selector {
   box-shadow: none !important;
   border-color: var(--color-xam-nhat) !important;
 }
-.ant-select-selector:hover{
+.ant-select-selector:hover {
   box-shadow: none !important;
   border-color: var(--color-xam-nhat) !important;
 }
 /* -------------- */
-.paging{
+.paging {
   text-align: end;
-  margin:10px 50px 100px 0px
+  margin: 10px 50px 100px 0px;
 }
 /* ---------------------------- */
-.flash{
+.flash {
   background-color: #fff;
   margin: 15px 0;
 }

@@ -8,7 +8,6 @@ function ThemeProvides({ children }) {
   const history = useHistory();
   const [user, setUser] = React.useState(null);
   const [products, setProducts] = React.useState([]);
-  console.log("🙉🍀 __ products1", products);
 
   React.useEffect(() => {
     auth.onAuthStateChanged((user) => {
@@ -18,21 +17,15 @@ function ThemeProvides({ children }) {
       }
     });
   }, []);
-  const hanldeGoogle = () => {
-    auth.signInWithPopup(Google_provider);
-  };
+  const hanldeGoogle = () => { auth.signInWithPopup(Google_provider); };
 
-  const hanldeGoogle_signOut = () => {
-    auth.signOut(Google_provider);
-    history.push("/login");
-  };
+  const hanldeGoogle_signOut = () => { auth.signOut(Google_provider); };
 
   // Truyền--------------------------------------------------------------------
   const ref = useRef();
   React.useEffect(() => {
     ref.current = products;
   }, [products]);
-  // const [sl,setSL] = useState (0)
 
   const get_products = (value) => {
     const abc = ref.current?.map((word) => word.id === value.id);
@@ -43,17 +36,14 @@ function ThemeProvides({ children }) {
       newArr[objIndex].sl = sl ? sl + 1 : 2;
       setProducts(newArr);
     } else {
-      setProducts((pev) => [...pev, value]);
+      setProducts((pev) => [...pev, Object.assign(value, { sl: 1 })]);
     }
   };
-  const value = {
-    user,
-    hanldeGoogle,
-    hanldeGoogle_signOut,
-    get_products,
-    products,
-    setProducts,
-  };
+  const remove_products = (value) => { setProducts(products.filter((products) => products.id !== value.id)); };
+  // ----------------------------------------------------------------------------------------------------
+  const value = { user, products, setProducts, hanldeGoogle, hanldeGoogle_signOut, get_products, remove_products };    // 
+  // ----------------------------------------------------------------------------------------------------
+
   return (
     <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
   );

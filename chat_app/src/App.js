@@ -8,6 +8,7 @@ import { ThemeProvides } from "./ThemeProvides";
 import Loadding from "./Component/Loading/Loadding";
 import HeaderCenter from "./Component/Bodys/HeaderCenter";
 import Body from "./Component/Bodys/Body";
+import ClickOncart from "./Component/Cart/ClickOncart";
 
 function App() {
   const [loading, setLoading] = React.useState(true);
@@ -43,7 +44,7 @@ function App() {
 
           <Switch>
             <Route exact path="/" component={Body} />
-            <Route exact path="/login" component={Login} />
+            <Route exact path="/checkout/cart" component={ClickOncart} />
           </Switch>
         </div>
       )}

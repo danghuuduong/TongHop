@@ -14,16 +14,26 @@ import { Container, Row, Col } from "reactstrap";
 import { NavLink } from "react-router-dom";
 import { ThemeContext } from "../../ThemeProvides";
 import Logout from "../Handle/Logout";
+import { Modal } from "antd";
+import Login from "../Handle/Login";
 
 function HeaderTop() {
+  const [isModalVisible, setIsModalVisible] = React.useState(false);
   const Context = React.useContext(ThemeContext);
   const [isOpen, setIsOpen] = React.useState(false);
   const noRefCheck = () => {
     setIsOpen(!isOpen);
   };
+  const showModal = () => {
+    setIsModalVisible(!isModalVisible);
+  };
+
   return (
     <Container>
-      <Row className="bgr_gray" style={{backgroundColor:isOpen ? 'red' : ''}}>
+      <Row
+        className="bgr_gray"
+        style={{ backgroundColor: isOpen ? "red" : "" }}
+      >
         <Col className="pd0_importan">
           <Navbar color="whie" expand="lg" light style={{ height: 35 }}>
             {/* <NavbarBrand href="/"><img src={img} style={{width:150}} /> </NavbarBrand> */}
@@ -43,7 +53,7 @@ function HeaderTop() {
               style={{
                 padding: 0,
                 margin: 0,
-                zIndex:1,
+                zIndex: 1,
               }}
             >
               <Nav className="me-auto" navbar>
@@ -109,9 +119,15 @@ function HeaderTop() {
                       )}
 
                       <NavItem>
-                        <NavLink end to="/login">
-                          ĐĂNG NHẬP
-                        </NavLink>
+                        <div onClick={showModal}>ĐĂNG NHẬP</div>
+                        <Modal
+                          visible={isModalVisible}
+                          onCancel={showModal}
+                          footer={null}
+                          width={435}
+                        >
+                          <Login />
+                        </Modal>
                       </NavItem>
                     </>
                   )}
@@ -119,10 +135,6 @@ function HeaderTop() {
 
                 <UncontrolledDropdown inNavbar nav>
                   <DropdownToggle caret nav>
-                    {/* <i
-                  className="fas fa-language"
-                  style={{ fontSize: 22, color: "#ff9f28" }}
-                ></i>{" "} */}
                     <img
                       src="/Images/english.png"
                       alt="hong"
