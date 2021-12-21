@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import HeaderTop from "./Component/Bodys/HeaderTop";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Login from "./Component/Handle/Login";
+import {  Route, Switch } from "react-router-dom";
 import "./App.css";
 import "antd/dist/antd.css";
 import { ThemeProvides } from "./ThemeProvides";
