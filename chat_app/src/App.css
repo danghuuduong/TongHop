@@ -11,8 +11,8 @@ html {
 :root {
   --bgr--vang: #f7941e;
   --color-red: #c92127;
-  --color-xam: #b1a29c;
-  --color-xam-nhat: #d9d9d9;
+  --color-xam: #f0f0f0;
+  --color-xam-nhat: #f0f0f0;
 }
 .bgrAll {
   background-color: #ceae7f;
@@ -53,16 +53,18 @@ a {
   /* Lúc chưa điền text vào input Login */
   width: 100%;
   border: none !important;
-  background: var(--color-xam-nhat) !important;
+  background: var(--color-red) !important;
+  opacity: 0.4;
+  color: #fff !important;
 }
 .bt__forceUpdate_lg_ok {
   /* ĐÃ điền text vào input Login */
   width: 100%;
   border: none !important;
-  background: var(--bgr--vang) !important;
+  background: var(--color-red) !important;
   text-shadow: 0 -1px 0 rgb(0 0 0 / 12%);
   box-shadow: 0 2px 0 rgb(0 0 0 / 5%);
-  color: #fff;
+  color: #fff !important;
 }
 /* ---------------------------------CHỖ TÌM KIÊM------------------------ */
 
@@ -75,11 +77,26 @@ a {
   border: none !important;
 }
 .ant-input-search-button:hover {
-  background-color: red !important;
+  /* Chỗ icon Tìm kiếm*/
+  opacity: 0.6;
   border: none !important;
+}
+/* Chỗ Input  */
+.ant-input .ant-input-lg :hover {
+  border: none !important;
+}
+.ant-input-wrapper .ant-input:hover {
+  border: 1px solid var(--color-xam) !important;
+}
+.ant-input-wrapper .ant-input:focus {
+  border: 1px solid var(--color-xam) !important;
+  box-shadow: none !important;
 }
 
 /* ---------------------------------BỎ GẠCH CHÂN------------------------ */
+.text {
+  color: var(--color-red);
+}
 .text_pirive {
   font-size: 15.5px;
   color: var(--color-red);
@@ -136,7 +153,8 @@ p {
   border-radius: 15px;
   border: none;
   font-size: 14px;
-  box-shadow: 5px 5px 15px 5px var(--color-red);
+  box-shadow: 2px 2px 15px 4px var(--color-red);
+  color: black;
 }
 .production:hover .production_link {
   bottom: 30px;
@@ -160,25 +178,6 @@ p {
   text-align: center;
 }
 /* -------------------------------------GIỎ HÀNG--------------- */
-.card_products {
-  /* border: 1px solid rgb(141, 121, 121); */
-  display: inline-block;
-  width: 270px !important;
-  height: 350px;
-  z-index: 1;
-  box-shadow: 1px 1px 10px 1px rgb(157, 156, 156);
-  background-color: white;
-  border-radius: 7px;
-  overflow-y: auto;
-  position: absolute !important;
-  right: 52px;
-  top: 30px;
-  display: none;
-  text-align: center;
-}
-.icon_card:hover .card_products {
-  display: block;
-}
 .icon_card {
   cursor: pointer;
   display: flex;
@@ -283,17 +282,52 @@ p {
   left: 0;
   width: 100%;
   height: 100%;
-  border: none !important;  /* quan trọng thằng lz này */
+  border: none !important; /* quan trọng thằng lz này */
   border-radius: 2px;
   visibility: hidden;
   -webkit-animation: antCheckboxEffect 0.36s ease-in-out;
   animation: antCheckboxEffect 0.36s ease-in-out;
   -webkit-animation-fill-mode: backwards;
   animation-fill-mode: backwards;
-  content: '';
+  content: "";
 }
-.ant-checkbox-inner{
-  border:1px solid var(--color-xam) !important;
-  transform: scale(1.4) !important;
+.ant-checkbox-inner {
+  border: 1px solid #545759 !important;
+  transform: scale(1.2) !important;
 }
-
+/* -------------------------------------------promotion---(KHUYỄN MÃI )---Khi chọn thanh để bắt đầu thanh toán */
+.promotion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 500;
+  color: #2f80ed;
+}
+.promotion i {
+  font-size: 22px;
+  transform: translateY(3px);
+}
+.promotion_code {
+  display: flex;
+  flex-direction: column;
+  color: #7a7e7f;
+}
+.btn_click_buymore {
+  text-align: end;
+}
+.btn_click_buymore span {
+  display: inline-block;
+  width: 95px;
+  height: 35px;
+  background-color: #2f80ed;
+  border-radius: 7px;
+  color: #fff;
+  text-align: center;
+  line-height: 35px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.btn_payment {
+}

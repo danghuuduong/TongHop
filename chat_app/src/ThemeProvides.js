@@ -1,6 +1,7 @@
 import React, { createContext, useRef } from "react";
 import firebase, { auth } from "./Firebase/config";
 import { useHistory } from "react-router-dom";
+import { dataQA } from "./constants/data";
 const ThemeContext = createContext();
 const Google_provider = new firebase.auth.GoogleAuthProvider();
 
@@ -8,7 +9,6 @@ function ThemeProvides({ children }) {
   const history = useHistory();
   const [user, setUser] = React.useState(null);
   const [products, setProducts] = React.useState([]);
-
   React.useEffect(() => {
     auth.onAuthStateChanged((user) => {
       setUser(user?._delegate);
@@ -16,9 +16,8 @@ function ThemeProvides({ children }) {
         history.push("/");
       }
     });
-  }, []);
+  }, [history]);
   const hanldeGoogle = () => { auth.signInWithPopup(Google_provider); };
-
   const hanldeGoogle_signOut = () => { auth.signOut(Google_provider); };
 
   // Truyền--------------------------------------------------------------------
@@ -41,8 +40,11 @@ function ThemeProvides({ children }) {
   };
   const remove_products = (value) => { setProducts(products.filter((products) => products.id !== value.id)); };
   // ----------------------------------------------------------------------------------------------------
-  const value = { user, products, setProducts, hanldeGoogle, hanldeGoogle_signOut, get_products, remove_products };    // 
-  // ----------------------------------------------------------------------------------------------------
+
+
+  const [data, setData] = React.useState([...dataQA])
+
+  const value = { user, products, setProducts, hanldeGoogle, hanldeGoogle_signOut, get_products, remove_products, data, setData };    // 
 
   return (
     <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>

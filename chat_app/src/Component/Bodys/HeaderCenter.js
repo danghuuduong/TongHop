@@ -3,11 +3,9 @@ import { Container, Row, Col } from "reactstrap";
 import { Input, Space } from "antd";
 import { NavLink } from "react-router-dom";
 import { ThemeContext } from "../../ThemeProvides";
-import CardList from "../Cart/Card_lish";
 
 const { Search } = Input;
-
-const suffix = <i style={{ fontSize: 25 }} className="fas fa-microphone" />;
+// const suffix = <i style={{ fontSize: 25 }} className="fas fa-microphone" />;
 const search = <i style={{ fontSize: 18 }} className="fas fa-search" />;
 
 function HeaderCenter() {
@@ -63,14 +61,11 @@ function HeaderCenter() {
                     .reduce((total, value) => (total = total + value), 0)}
                 </span>
               )}
-              <div className="card_products">
-                <CardList />
-              </div>
             </div>
           </NavLink>
         </Col>
       </Row>
-    </Container>
+    </Container >
   );
 }
 

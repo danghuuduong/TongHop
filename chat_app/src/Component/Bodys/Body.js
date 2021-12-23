@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Container, Row, Col } from "reactstrap";
 import NavLeft from "./NavLeft";
 import Contents from "./Contents";
@@ -6,9 +6,9 @@ import Classify from "../Handle/Classify";
 import { Pagination } from "antd";
 
 function Body() {
-  function onShowSizeChange(current, pageSize) {
-    console.log(current, pageSize);
-  }
+  // function onShowSizeChange(current, pageSize) {
+  //   console.log(current, pageSize);
+  // }
   return (
     <div className="bgr_gray">
       <Container style={{ marginTop: 0, paddingTop: 10 }}>

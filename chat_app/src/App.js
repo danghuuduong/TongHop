@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import HeaderTop from "./Component/Bodys/HeaderTop";
-import {  Route, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import "./App.css";
 import "antd/dist/antd.css";
 import { ThemeProvides } from "./ThemeProvides";
@@ -11,36 +11,31 @@ import ClickOncart from "./Component/Cart/ClickOncart";
 
 function App() {
   const [loading, setLoading] = React.useState(true);
-
   useEffect(() => {
-    setTimeout(() => {
-      setLoading(!loading);
+    var timeout;
+    timeout = setTimeout(() => {
+      setLoading(false);
     }, 500);
-    return () => {};
+    return () => {
+      clearTimeout(timeout);
+    };
   }, []);
+  const [numArray, setData] = React.useState([1, 5, 3, 0, -1])
 
+  // console.log("🙉🍀 __ data", numArray.sort((a, b) => a - b))
   return (
     <ThemeProvides>
       {loading ? (
         <Loadding />
       ) : (
         <div>
-          <div
-            style={{
-              maxWidth: "100%",
-            }}
-            className="bgrAll text-al-ct"
-          >
-            <img
-              src="https://cdn0.fahasa.com/media/wysiwyg/Thang-12-2021/BigSale_T1221_mainbanner_edit timeline_1263x60.jpg"
-              alt="hong"
-            />
+          <div style={{ maxWidth: "100%", background: '#014425' }} className="text-al-ct" >
+            <img src="https://cdn0.fahasa.com/media/wysiwyg/Thang-12-2021/mega%20sale_1263%20x%2060%20NON%20LABEL.png" alt="hong" />
           </div>
           <div className="bgr_gray pd0_importan">
             <HeaderTop />
           </div>
           <HeaderCenter />
-
           <Switch>
             <Route exact path="/" component={Body} />
             <Route exact path="/checkout/cart" component={ClickOncart} />
@@ -48,6 +43,7 @@ function App() {
         </div>
       )}
     </ThemeProvides>
+
   );
 }
 
