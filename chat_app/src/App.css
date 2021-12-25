@@ -228,6 +228,7 @@ p {
   text-align: center;
   line-height: 40px;
   font-weight: 700;
+  padding: 0px;
 }
 /* ---------------------------- */
 .ClickOncart_img {
@@ -260,11 +261,7 @@ p {
   box-shadow: none !important;
   border-color: var(--color-xam-nhat) !important;
 }
-/* -------------- */
-.paging {
-  text-align: end;
-  margin: 10px 50px 100px 0px;
-}
+
 /* ---------------------------- */
 .flash {
   background-color: #fff;
@@ -330,4 +327,19 @@ p {
   cursor: pointer;
 }
 .btn_payment {
+}
+
+
+.Col_NavLeft{
+  padding: 0px !important;
+}
+.Col_NavLeft_child{
+  background-color: #fff;
+  margin-right: 10px;
+}
+@media only screen and (max-width: 992px){
+  .Col_NavLeft_child{
+      /* display: none; */
+      margin: 0;
+  }
 }

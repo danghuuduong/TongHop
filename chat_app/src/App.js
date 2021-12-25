@@ -29,9 +29,9 @@ function App() {
         <Loadding />
       ) : (
         <div>
-          <div style={{ maxWidth: "100%", background: '#014425' }} className="text-al-ct" >
+          {/* <div style={{background: '#014425'}} className="text-al-ct" >
             <img src="https://cdn0.fahasa.com/media/wysiwyg/Thang-12-2021/mega%20sale_1263%20x%2060%20NON%20LABEL.png" alt="hong" />
-          </div>
+          </div> */}
           <div className="bgr_gray pd0_importan">
             <HeaderTop />
           </div>
