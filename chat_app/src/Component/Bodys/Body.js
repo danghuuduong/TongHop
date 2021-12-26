@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "reactstrap";
-import NavLeft from "./NavLeft";
-import Contents from "./Contents";
+import NavLeft from "./BodyContent/NavLeft";
+import Contents from "./BodyContent/Contents";
 import Classify from "../Handle/Classify";
 import Flash from "../Sale/Flash";
 

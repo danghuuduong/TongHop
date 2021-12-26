@@ -35,23 +35,20 @@ function ClickOncart() {
             <Container style={{ paddingTop: 15 }}>
                 <Row >
                     <Col xs={8}>
-                        <Row style={{
-                            backgroundColor: '#fff', height: 50,
-                            alignItems: 'center', marginBottom: 10, borderRadius: 8, fontSize: 18, fontWeight: 600
-                        }}>
+                        <Row style={{backgroundColor: '#fff',height: 50,alignItems: 'center',marginBottom: 10, borderRadius: 8,fontSize: 18, fontWeight: 600 }}>
                             <Col xs={7}>
                                 <Checkbox onChange={onCheckAllChange} checked={checkAll} style={{ marginLeft: 10 }}>
-                                    <div style={{ marginLeft: 7, fontSize: 18 }}>
-                                        Chọn tất Cả ( {Context.products.length} sản phẩm)
-                                    </div>
+                                    <div style={{ marginLeft: 7, fontSize: 18 }}>  Chọn tất Cả ( {Context.products.length} sản phẩm) </div>
                                 </Checkbox>
                             </Col >
                             <Col xs={2} style={{ textAlign: 'center', transform: 'translateX(-5px)' }}>
                                 <div>Số Lượng</div>
                             </Col>
-                            <Col xs={3} style={{ transform: 'translateX(-5px)' }}>   Thành Tiền  </Col>
+                            <Col xs={3} style={{ transform: 'translateX(-5px)' }}>  
+                             Thành Tiền 
+                            </Col>
                         </Row>
-                        <Row style={{ backgroundColor: '#fff', borderRadius: 8, overflowY: "scroll", height: 700 }}>
+                        <Row style={{ backgroundColor: '#fff', borderRadius: 8, overflowY: "scroll", height: 495 }}>
                             <CheckboxGroup value={checkedList} onChange={onChange} style={{ width: '100%', pading: 0, margin: 0 }}>
                                 {
                                     Context.products.map((x, i) => {
@@ -62,13 +59,17 @@ function ClickOncart() {
                                                     <Row>
                                                         <Col style={{ display: "flex", alignItems: "center", justifyContent: 'space-between' }} xs={7} >
                                                             <div style={{ display: "flex" }}>
-                                                                <div className="ClickOncart_img"> <img src={x.imgURl} alt="err" width={130} /></div>
+                                                                <div className="ClickOncart_img"> 
+                                                                    <img src={x.imgURl} alt="err" width={130} />
+                                                                </div>
                                                                 <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", }}>
                                                                     <div>
                                                                         <div>{x.title}</div>
                                                                         <div className="yellow">Có Hàng</div>
                                                                     </div>
-                                                                    <div><ConvertNVD money={x.prirce} /></div>
+                                                                    <div>
+                                                                        <ConvertNVD money={x.prirce} />
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </Col>
@@ -93,7 +94,7 @@ function ClickOncart() {
                             </CheckboxGroup>
                         </Row>
                     </Col>
-                    {/* ------------------------------------- */}
+                    {/* --------------------Thanh 6 cái button Sake MÃ giảm giá-------------- */}
                     <Col xs={4}>
                         <Promotionpay checkedList={checkedList} />
                     </Col>

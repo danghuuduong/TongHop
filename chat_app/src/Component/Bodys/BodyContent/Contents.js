@@ -1,8 +1,8 @@
 import React from "react";
-import { ThemeContext } from "../../ThemeProvides";
+import { ThemeContext } from "../../../ThemeProvides";
 import { Col } from "reactstrap";
 import { List,Rate } from "antd";
-import ConvertNVD from "../Handle/ConvertNVD";
+import ConvertNVD from "../../Handle/ConvertNVD";
 
 function Contents() {
   const Context = React.useContext(ThemeContext);
@@ -13,13 +13,7 @@ function Contents() {
     <List
     pagination={{ onChange: (page) => {  console.log(page); }, pageSize: 8}}
     dataSource={Context.data}
-    grid={{
-        xs: 1,
-        sm: 2,
-        md: 3,
-        lg: 4,
-        xl: 4,
-        xxl: 4,
+    grid={{ xs: 1,sm: 2, md: 3,lg: 4, xl: 4, xxl: 4,
       }}
     renderItem={(x, i) => (
         <List.Item  key={x.id} >
@@ -67,10 +61,7 @@ function Contents() {
                     </div>
                     <button
                         className="btn_add_cart"
-                        onClick={() => {
-                        selectProduc(x);
-                        }}
-                    >
+                        onClick={() => {   selectProduc(x);  }} >
                         {" "}
                         <i className="fas fa-cart-plus"></i> Thêm Giỏ hàng
                     </button>

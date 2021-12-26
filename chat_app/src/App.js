@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
-import HeaderTop from "./Component/Bodys/HeaderTop";
+import HeaderTop from "./Component/Bodys/BodyContent/HeaderTop";
 import { Route, Switch } from "react-router-dom";
 import "./App.css";
 import "antd/dist/antd.css";
 import { ThemeProvides } from "./ThemeProvides";
 import Loadding from "./Component/Loading/Loadding";
-import HeaderCenter from "./Component/Bodys/HeaderCenter";
+import HeaderCenter from "./Component/Bodys/BodyContent/HeaderCenter";
 import Body from "./Component/Bodys/Body";
 import ClickOncart from "./Component/Cart/ClickOncart";
 
