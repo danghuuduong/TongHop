@@ -1,12 +1,13 @@
 import React from 'react'
 import ConvertNVD from '../Handle/ConvertNVD'
 import { Button } from "antd";
+import style from './Payment.module.css';
 
 function Promotion_pay({ checkedList }) {
     return (
         <React.Fragment>
             <div style={{ backgroundColor: '#fff', padding: 15, borderRadius: 8 }}>
-                <div className='promotion'>
+                <div className={style.promotion}>
                     <div>
                         <span><i className="fas fa-ad"></i></span>
                         <span style={{ marginLeft: 10 }}>KHUYẾN MÃI</span>
@@ -17,7 +18,7 @@ function Promotion_pay({ checkedList }) {
                     </div>
                 </div>
                 <hr />
-                <div className='promotion_code'>
+                <div className={style.promotion_code}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', }}>
                         <h5>MOCA: GIẢM NGAY 99K</h5>
                         <span style={{ color: '#2f80ed', cursor: 'pointer' }}>Chi Tiết</span>
@@ -26,12 +27,12 @@ function Promotion_pay({ checkedList }) {
                     <span> Nhập mã tại Fahasa</span>
                 </div>
                 <p style={{ color: 'red' }}>*Điều kiện không thỏa </p>
-                <div className='btn_click_buymore'>
+                <div className={style.btn_click_buymore}>
                     <span>Mua Thêm</span>
                 </div>
                 <hr />
 
-                <div className='promotion_code'>
+                <div className={style.promotion_code}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', }}>
                         <h5>MOCA: GIẢM NGAY 55K</h5>
                         <span style={{ color: '#2f80ed', cursor: 'pointer' }}>Chi Tiết</span>

@@ -1,0 +1,35 @@
+/* -------------------------------------------promotion---(KHUYỄN MÃI )---Khi chọn thanh để bắt đầu thanh toán */
+.promotion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 500;
+  color: #2f80ed;
+}
+.promotion i {
+  font-size: 22px;
+  transform: translateY(3px);
+}
+.promotion_code {
+  display: flex;
+  flex-direction: column;
+  color: #7a7e7f;
+}
+
+.btn_click_buymore {
+  text-align: end;
+}
+.btn_click_buymore span {
+  display: inline-block;
+  width: 95px;
+  height: 35px;
+  background-color: #2f80ed;
+  border-radius: 7px;
+  color: #fff;
+  text-align: center;
+  line-height: 35px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}

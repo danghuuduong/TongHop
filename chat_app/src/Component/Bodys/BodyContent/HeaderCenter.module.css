@@ -1,0 +1,26 @@
+/* -------------------------------------GIỎ HÀNG--------------- */
+.icon_card {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--bgr--vang);
+  position: relative;
+  margin-right: 24px;
+}
+.icon_card i {
+  font-size: 25px;
+}
+
+.count_cart {
+  position: absolute;
+  font-size: 14px;
+  left: 0;
+  top: -8px;
+  font-weight: 600;
+  color: #fff;
+  width: 26px;
+  text-align: center;
+  border-radius: 7px;
+  background-color: var(--color-red);
+}

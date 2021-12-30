@@ -1,14 +1,15 @@
 import React from "react";
-import "./style.css";
+import style from './Loadding.module.css';
+
 function Loadding() {
   return (
-    <div style={{ backgroundColor:'black', width:'100%',height:'100vh'}}>
-      <div className="ring" >
-            Loading
-            <span></span>
-          </div>
+    <div style={{ backgroundColor: 'black', width: '100%', height: '100vh' }}>
+      <div className={style.ring} >
+        Loading
+        <span></span>
+      </div>
     </div>
-    
+
   );
 }
 

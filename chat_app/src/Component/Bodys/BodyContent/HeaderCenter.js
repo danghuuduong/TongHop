@@ -3,6 +3,7 @@ import { Container, Row, Col } from "reactstrap";
 import { Input, Space } from "antd";
 import { NavLink } from "react-router-dom";
 import { ThemeContext } from "../../../ThemeProvides";
+import style from "./HeaderCenter.module.css";
 
 const { Search } = Input;
 // const suffix = <i style={{ fontSize: 25 }} className="fas fa-microphone" />;
@@ -48,14 +49,14 @@ function HeaderCenter() {
           }}
         >
           <NavLink end to="/checkout/cart">
-            <div className="icon_card">
+            <div className={style.icon_card}>
               <span>
                 {" "}
                 <i className="fas fa-shopping-cart"></i>{" "}
               </span>
               <span style={{ color: "#f7941e" }}>GIỎ HÀNG</span>
               {Context.products.length >= 1 && (
-                <span className="count_cart">
+                <span className={style.count_cart}>
                   {Context.products
                     .map((x) => x.sl ?? 1)
                     .reduce((total, value) => (total = total + value), 0)}

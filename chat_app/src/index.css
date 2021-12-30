@@ -1,0 +1,73 @@
+/* --------------------------------------  CHECKBOX ĐÈ LÊN CSS CỦA ANTD-------------------*/
+.ant-checkbox-checked .ant-checkbox-inner {
+  background-color: var(--color-red) !important;
+  border-color: var(--color-red) !important;
+}
+.ant-checkbox-checked::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none !important; /* quan trọng thằng lz này */
+  border-radius: 2px;
+  visibility: hidden;
+  -webkit-animation: antCheckboxEffect 0.36s ease-in-out;
+  animation: antCheckboxEffect 0.36s ease-in-out;
+  -webkit-animation-fill-mode: backwards;
+  animation-fill-mode: backwards;
+  content: "";
+}
+.ant-checkbox-inner {
+  border: 1px solid #545759 !important;
+  transform: scale(1.2) !important;
+}
+
+/* ---------------------------------CHỖ TÌM KIÊM CỦA ANTD , CSS ĐÈ LÊN KHÔNG QTAM LMJ------------------------ */
+
+.ant-input-affix-wrapper-lg {
+  border: 1px solid var(--color-xam) !important;
+  box-shadow: none !important;
+}
+.ant-input-search-button {
+  background-color: var(--bgr--vang) !important;
+  border: none !important;
+}
+.ant-input-search-button:hover {
+  /* Chỗ icon Tìm kiếm*/
+  opacity: 0.6;
+  border: none !important;
+}
+/* Chỗ Input  */
+.ant-input .ant-input-lg :hover {
+  border: none !important;
+}
+.ant-input-wrapper .ant-input:hover {
+  border: 1px solid var(--color-xam) !important;
+}
+.ant-input-wrapper .ant-input:focus {
+  border: 1px solid var(--color-xam) !important;
+  box-shadow: none !important;
+}
+/* -------------------------------------- KHÔNG NHỚ------------*/
+.ant-modal-body {
+  padding: 13px !important;
+}
+.ant-input-affix-wrapper:not(.ant-input-affix-wrapper-disablead):hover {
+  border-color: rgb(151, 151, 151) !important;
+  border-right-width: 1px !important;
+  z-index: 1 !important;
+}
+.ant-modal-content {
+  /* Thẻ bao bọc Tổng modal Login */
+  border-radius: 7px !important;
+}
+/* -------------------------------------- KHÔNG NHỚ------------*/
+.ant-select-selector {
+  box-shadow: none !important;
+  border-color: var(--color-xam-nhat) !important;
+}
+.ant-select-selector:hover {
+  box-shadow: none !important;
+  border-color: var(--color-xam-nhat) !important;
+}

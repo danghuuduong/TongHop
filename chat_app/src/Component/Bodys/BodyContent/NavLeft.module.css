@@ -1,0 +1,25 @@
+/*  */
+.Col_NavLeft_child {
+  background-color: #fff;
+  margin-right: 10px;
+}
+.category {
+  background-color: var(--bgr--vang);
+  color: #fff;
+  height: 40px;
+  margin: 0px;
+  text-align: center;
+  line-height: 40px;
+  font-weight: 700;
+  padding: 0px;
+}
+.Col_NavLeft_child {
+  background-color: #fff;
+  margin-right: 10px;
+}
+@media only screen and (max-width: 991px) {
+  .Col_NavLeft_child {
+    margin-bottom: 15px;
+    margin-right: 0;
+  }
+}

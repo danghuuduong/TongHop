@@ -6,6 +6,8 @@ import { Container, Row, Col } from "reactstrap";
 import { MinusOutlined, PlusOutlined } from '@ant-design/icons';
 import ConvertNVD from '../Handle/ConvertNVD'
 import Promotionpay from './Payment';
+import style from './ClickOncart.module.css';
+
 const CheckboxGroup = Checkbox.Group;
 
 function ClickOncart() {
@@ -35,7 +37,7 @@ function ClickOncart() {
             <Container style={{ paddingTop: 15 }}>
                 <Row >
                     <Col xs={8}>
-                        <Row style={{backgroundColor: '#fff',height: 50,alignItems: 'center',marginBottom: 10, borderRadius: 8,fontSize: 18, fontWeight: 600 }}>
+                        <Row style={{ backgroundColor: '#fff', height: 50, alignItems: 'center', marginBottom: 10, borderRadius: 8, fontSize: 18, fontWeight: 600 }}>
                             <Col xs={7}>
                                 <Checkbox onChange={onCheckAllChange} checked={checkAll} style={{ marginLeft: 10 }}>
                                     <div style={{ marginLeft: 7, fontSize: 18 }}>  Chọn tất Cả ( {Context.products.length} sản phẩm) </div>
@@ -44,8 +46,8 @@ function ClickOncart() {
                             <Col xs={2} style={{ textAlign: 'center', transform: 'translateX(-5px)' }}>
                                 <div>Số Lượng</div>
                             </Col>
-                            <Col xs={3} style={{ transform: 'translateX(-5px)' }}>  
-                             Thành Tiền 
+                            <Col xs={3} style={{ transform: 'translateX(-5px)' }}>
+                                Thành Tiền
                             </Col>
                         </Row>
                         <Row style={{ backgroundColor: '#fff', borderRadius: 8, overflowY: "scroll", height: 495 }}>
@@ -59,7 +61,7 @@ function ClickOncart() {
                                                     <Row>
                                                         <Col style={{ display: "flex", alignItems: "center", justifyContent: 'space-between' }} xs={7} >
                                                             <div style={{ display: "flex" }}>
-                                                                <div className="ClickOncart_img"> 
+                                                                <div className={style.ClickOncart_img}>
                                                                     <img src={x.imgURl} alt="err" width={130} />
                                                                 </div>
                                                                 <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", }}>
@@ -74,7 +76,7 @@ function ClickOncart() {
                                                             </div>
                                                         </Col>
                                                         <Col xs={2} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                                                            <div className="up_dow_quantity">
+                                                            <div className={style.up_dow_quantity}>
                                                                 <span> <MinusOutlined /> </span>
                                                                 <div style={{ fontSize: 16, width: 40, textAlign: 'center' }}>{x.sl}</div>
                                                                 <span> <PlusOutlined /> </span>
