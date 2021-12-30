@@ -13,6 +13,8 @@ html {
   --color-red: #c92127;
   --color-xam: #f0f0f0;
   --color-xam-nhat: #f0f0f0;
+  --color-text_white: #fff;
+  --radius-6: 6px;
 }
 .bgrAll {
   background-color: #ceae7f;

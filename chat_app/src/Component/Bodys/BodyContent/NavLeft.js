@@ -15,7 +15,7 @@ function NavLeft() {
                     <hr />
                     <p>Quần jogger & Quần nỉ nam</p>
                     <p>Áo thun nữ</p>
-                    <p> Bộ quần áo bé trai</p>
+
                 </div>
             </div>
         </React.Fragment>
