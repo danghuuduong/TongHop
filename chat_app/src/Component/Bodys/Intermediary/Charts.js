@@ -60,7 +60,7 @@ function Charts() {
                             <Row >
                                 {
                                     data.map( x => 
-                                     <Col lg={6} style={{ padding: 0 }}>
+                                     <Col lg={6} style={{ padding: 0 }} key={`products2_${x.id}`}>
                                         <div className={style.view2products}>
                                             <div>
                                                 <img src={x.LinkUrl} alt='' width={175} />

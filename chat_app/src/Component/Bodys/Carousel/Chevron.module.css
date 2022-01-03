@@ -1,0 +1,20 @@
+.gwap_chevron{
+    cursor: pointer;
+}
+.chevron{
+    background-color: white;
+    opacity: 0.5;
+    border-radius: 50%;
+    display: flex;
+    width: 35px;
+    height: 35px;
+    color: black;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin: 0px 20px;
+}
+.gwap_chevron:hover .chevron{
+    opacity: 1;
+    cursor: pointer;
+}

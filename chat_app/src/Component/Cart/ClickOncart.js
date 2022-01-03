@@ -65,7 +65,7 @@ function ClickOncart() {
                                     Context.products.map((x, i) => {
                                         return (
                                             <>
-                                                <div style={{ margin: '0 25px 5px 25px' }} key={x.id}>
+                                                <div style={{ margin: '0 25px 5px 25px' }} key={`${x.id} ${i}`}>
                                                     <Checkbox type="checkbox" value={x} style={{ margin: 0, padding: 0, transform: 'translate(-15px,70px)' }}></Checkbox>
                                                     <Row>
                                                         <Col style={{ display: "flex", alignItems: "center", justifyContent: 'space-between' }} xs={7} >

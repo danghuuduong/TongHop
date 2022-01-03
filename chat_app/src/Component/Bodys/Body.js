@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row, Col } from "reactstrap";
+import { Container, Row, Col} from "reactstrap";
 import NavLeft from "./BodyContent/NavLeft";
 import Contents from "./BodyContent/Contents";
 import Classify from "../Handle/Classify";
@@ -7,7 +7,7 @@ import Flash from "../Sale/Flash";
 import style from "./Body.module.css";
 import Charts from "./Intermediary/Charts";
 import FooterC from "./FooterC";
-import { Carousel } from 'antd';
+import Carousels from "./Carousel/index";
 const dataPr = [
     { id: 1, Pr_Link: 'https://cdn0.fahasa.com/media/wysiwyg/Thang-01-2022/TrangMonthlySale_T122_bo1__310x210.jpg' },
     { id: 2, Pr_Link: 'https://cdn0.fahasa.com/media/wysiwyg/CMS-PAGE/MangaComic/TGDQ/after1812/TGDQv4_310%20x%20210.png' },
@@ -22,19 +22,12 @@ function Body() {
                 <Row style={{marginBottom:20}}>
                     <Col style={{padding:0}}><NavLeft /></Col>
                     <Col xs={9} style={{padding:0}}>
-                    <Carousel autoplay>
-                        <div>
-                        <img src="https://cdn0.fahasa.com/media/magentothem/banner7/TrangMonthlySale_T122_mainbanner__920x420.jpg" width={'100%'}/>
-                        </div>
-                        <div>
-                        <img src="https://cdn0.fahasa.com/media/magentothem/banner7/bigsale_resize_920.jpg" width={'100%'}/>
-                        </div>
-                    </Carousel>
+                      <Carousels />  
                     </Col>
                 </Row>
                 <Row  className={style.prlink}>
                     {
-                        dataPr.map(x => <Col md={3} style={{ padding: '10px 0', backgroundColor: 'white', textAlign: 'center' }} key={x.id}><img src={x.Pr_Link} width={'95%'} alt="" /></Col >)
+                        dataPr.map(x => <Col key={`sale4cai${x.id}`} md={3} style={{ padding: '10px 0', backgroundColor: 'white', textAlign: 'center' }} key={x.id}><img src={x.Pr_Link} width={'95%'} alt="" /></Col >)
                     }
                 </Row>
                 <Row className={style.flash}>
