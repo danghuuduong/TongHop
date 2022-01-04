@@ -23,10 +23,10 @@ function HeaderCenter() {
     }, []);
     return (
         <Container>
-            <Row style={{ position: "relative" }}>
+            <Row style={{ position: "relative"}}>
                 <Col>
                     <NavLink to="/">
-                        <img src="/Images/logo.png" alt="logo" width={90} />
+                    <img src="https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/logo.png" width={200}/>
                     </NavLink>
                 </Col>
                 <Col

@@ -25,7 +25,7 @@ html {
   color: var(--bgr--vang);
 }
 .bgr_gray {
-  background-color: #eff0f5;
+  background-color: #eff0f5 !important;
 }
 .bgr_common {
   background-color: var(--bgr--vang);

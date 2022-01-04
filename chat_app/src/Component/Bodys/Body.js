@@ -9,6 +9,7 @@ import Charts from "./Intermediary/Charts";
 import FooterC from "./FooterC";
 import Carousels from "./Carousel/index";
 import { dataPr, data_view2, data_view2_2 } from "../../constants/data";
+import Filter from "../Handle/Filter";
 
 function Body() {
     return (
@@ -22,14 +23,19 @@ function Body() {
                 </Row>
                 <Row className={style.prlink}>
                     {
-                        dataPr.map(x => <Col key={`sale4cai${x.id}`} md={3} style={{ padding: '10px 0', backgroundColor: 'white', textAlign: 'center' }} ><img src={x.Pr_Link} width={'95%'} alt="" /></Col >)
+                        dataPr.map(x => <Col key={`sale4cai${x.id}`} md={3} style={{ padding: '10px 0', backgroundColor: 'white', textAlign: 'center' }} >
+                            <img src={x.Pr_Link} width={'95%'} alt="" /></Col >)
                     }
                 </Row>
                 <Row className={style.flash}>
                     <Flash />
                 </Row>
+                {/* Nội Dung Chính-------------------------------------------------------- */}
                 <Row>
-                    <Col md={12} style={{ backgroundColor: "#fff", padding: 0, margin: 0 }} >
+                    <Col style={{ padding: 0 }}>
+                        <Filter />
+                        </Col>
+                    <Col md={10} style={{ backgroundColor: "#fff", padding: 0, margin: 0 }} >
                         <Classify /> <hr />
                         <Row style={{ margin: 0 }}>  <Contents /> </Row>
                     </Col>
@@ -41,7 +47,7 @@ function Body() {
                     <Charts data_view2={data_view2} />
                 </Row>
 
-                {/* <FooterC /> */}
+                <FooterC />
             </Container>
         </div>
     );

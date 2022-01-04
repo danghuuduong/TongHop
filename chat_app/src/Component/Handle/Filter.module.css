@@ -1,0 +1,15 @@
+.title{
+    font-size: 18px;
+    font-weight: 600;
+}
+.awap_checkboxText{
+    display: flex;
+    align-items: center;
+    margin: 5px 0 5px 10px;
+    cursor: pointer;
+}
+.awap_checkboxText input{
+    margin-right: 7px;
+    cursor: pointer;
+    transform: scale(1.3);
+}

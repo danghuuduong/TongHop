@@ -23,8 +23,10 @@ function Classify() {
         }
     }
     return (
-        <Row style={{ margin: 10 }}>
-            <Col>56316 mặt hàng được tìm thấy theo: "phim tập"</Col>
+        <Row style={{ margin: '20px 5px' }}>
+            <Col>
+            <div style={{fontSize:18,}}>563 KẾT QUẢ TÌM KIẾM VỚI: "phim tập"</div>
+            </Col>
             <Col style={{ display: 'flex', alignItems: 'center', justifyContent: 'end' }}>
                 <div style={{ textAlign: 'end', display: 'flex', alignItems: 'center', justifyContent: 'end' }}>
                     <div >Sắp Xếp Theo:</div>

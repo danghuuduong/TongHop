@@ -27,12 +27,13 @@
 }
 .icon_cardSrcoll {
   position: fixed;
-  top: 40%;
-  right: 8%;
+  top: 35%;
+  right: -1%;
   font-size: 13px;
+  z-index: 1;
 }
 .icon_cardSrcoll .icon_card {
-  z-index: 1;
+  z-index: 2;
   background-color: #fff;
   border-radius: 50%;
   height: 85px;
