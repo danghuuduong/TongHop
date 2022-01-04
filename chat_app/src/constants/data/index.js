@@ -3,82 +3,155 @@
 // data chính-----------------------------
 const dataQA = [
     {
-        id: 1,
-        title: "Disney Kids Readers Level 1 Pack Of 6 Disney ",
-        prirce: 175000,
-        star: 3.5,
-        imgURl:
-            "https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/400x400/9df78eab33525d08d6e5fb8d27136e95/i/m/image_244718_1_5431.jpg",
+        id: 15,
+        title: "Bé Tô Màu Mèo Oggy Và Những Chú Gián Tinh Nghịch - Quyển 2",
+        prirce: 675463,
+        star: 4.5,
+        imgURl: "https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/400x400/9df78eab33525d08d6e5fb8d27136e95/i/m/image_195509_1_33931.jpg",
     },
     {
+        id: 16,
+        title: "Bé Tô Màu Chú Bộ Đội",
+        prirce: 34567,
+        star: 4.5,
+        imgURl: "https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/400x400/9df78eab33525d08d6e5fb8d27136e95/i/m/image_195509_1_33935.jpg",
+    },
+    {
+        id: 17,
+        title: "Tô Màu Biển Đảo Tổ Quốc Em 1 - Tự Hào Biển Đảo",
+        prirce: 943666,
+        star: 4.5,
+        imgURl: "https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/400x400/9df78eab33525d08d6e5fb8d27136e95/i/m/image_221260_1.jpg",
+    },
+
+    {
         id: 2,
-        title: "Disney Kids Readers Level 1 Pack Of 6",
+        title: "Tôi Đi Học (Tái Bản 2019)",
         prirce: 1989000,
         star: 2,
+        imgURl:
+            "https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/400x400/9df78eab33525d08d6e5fb8d27136e95/i/m/image_195509_1_11608.jpg",
+    },
+    {
+        id: 3,
+        title: "Nhật Ký Chú Bé Nhút Nhát - Tập 15: Cái Kết Khó Lường",
+        prirce: 37000,
+        star: 2.5,
+        imgURl:
+            "https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/400x400/9df78eab33525d08d6e5fb8d27136e95/n/h/nh_t-k_-ch_-b_-nh_t-nh_15.jpg",
+    },
+    {
+        id: 4,
+        title: "Nhật Ký Chú Bé Nhút Nhát - Tập 1",
+        prirce: 225000,
+        star: 3.5,
+        imgURl:
+            "https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/400x400/9df78eab33525d08d6e5fb8d27136e95/i/m/image_195509_1_20355.jpg",
+    },
+    {
+        id: 5,
+        title: "Dế Mèn Phiêu Lưu Ký - Tái Bản 2020",
+        prirce: 89000,
+        star: 3.5,
+        imgURl:
+            "https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/400x400/9df78eab33525d08d6e5fb8d27136e95/d/e/de-men-50k_1.jpg",
+    },
+    {
+        id: 6,
+        title: "Song Ngữ Việt - Anh - Diary Of A Wimpy Kid  - Nhật Ký Chú Bé Nhút Nhát - Tập 1",
+        prirce: 17000,
+        star: 2,
+        imgURl:
+            "https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/400x400/9df78eab33525d08d6e5fb8d27136e95/i/m/image_195509_1_31011.jpg",
+    },
+    {
+        id: 7,
+        title: "Chuyện Con Mèo Dạy Hải Âu Bay (Tái Bản 2019)",
+        prirce: 37000,
+        star: 2.5,
+        imgURl:
+            "https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/400x400/9df78eab33525d08d6e5fb8d27136e95/i/m/image_188285.jpg",
+    },
+    {
+        id: 8,
+        title: "Hoàng Tử Bé (Tái Bản 2019)",
+        prirce: 5000,
+        star: 3.5,
+        imgURl:
+            "https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/400x400/9df78eab33525d08d6e5fb8d27136e95/i/m/image_187010.jpg",
+    },
+    {
+        id: 9,
+        title: "Bạn Thân",
+        prirce: 69000,
+        star: 4.5,
+        imgURl: "https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/400x400/9df78eab33525d08d6e5fb8d27136e95/i/m/image_187983.jpg",
+    },
+    {
+        id: 10,
+        title: "My Little Pony - Rainbow Rocks - Ban Nhạc Cầu Vồng (Hình Dán)",
+        prirce: 14000,
+        star: 4.5,
+        imgURl: "https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/400x400/9df78eab33525d08d6e5fb8d27136e95/8/9/8935210220691.jpg",
+    },
+    {
+        id: 11,
+        title: "Tô Màu Cổ Tích Công Chúa - Tập 2: Công Chúa Bạch Tuyết",
+        prirce: 145000,
+        star: 4.5,
+        imgURl: "https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/400x400/9df78eab33525d08d6e5fb8d27136e95/i/m/image_84238.jpg",
+    },
+    {
+        id: 12,
+        title: "300 Miếng Bóc Dán Thông Minh - Phát Triển Tư Duy",
+        prirce: 453556,
+        star: 4.5,
+        imgURl: "https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/400x400/9df78eab33525d08d6e5fb8d27136e95/i/m/image_195509_1_45918.jpg",
+    },
+    {
+        id: 14,
+        title: "Tôi Vẽ - Phương Pháp Tự Học Vẽ Truyện Tranh",
+        prirce: 345699,
+        star: 4.5,
+        imgURl: "https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/400x400/9df78eab33525d08d6e5fb8d27136e95/8/9/8936071672704.jpg",
+    },
+
+    {
+        id: 18,
+        title: "Naruto Tập 66",
+        prirce: 456567,
+        star: 4.5,
+        imgURl: "https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/400x400/9df78eab33525d08d6e5fb8d27136e95/n/a/naruto---tap-66.jpg",
+    },
+    {
+        id: 19,
+        title: "Tetsugaku Letra - Vũ Điệu Giày Đỏ - Tập 5",
+        prirce: 148888,
+        star: 4.5,
+        imgURl: "https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/400x400/9df78eab33525d08d6e5fb8d27136e95/v/u/vu-dieu-giay-do---tap-5.jpg",
+    },
+    {
+        id: 20,
+        title: "Dr.STONE - Tập 9: Trận Chiến Cuối Cùng",
+        prirce: 895555,
+        star: 4.5,
+        imgURl: "https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/400x400/9df78eab33525d08d6e5fb8d27136e95/d/r/dr.-stone---tap-9.jpg",
+    },
+    {
+        id: 21,
+        title: "Dã Ngoại Thảnh Thơi - Yurucamp - Tập 3",
+        prirce: 175000,
+        star: 3.5,
         imgURl:
             "https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/400x400/9df78eab33525d08d6e5fb8d27136e95/d/a/da-ngoai-thanh-thoi---tap-3.jpg",
     },
     {
-        id: 3,
-        title: "Disney Kids Readers Level 1 Pack Of 6",
-        prirce: 37000,
-        star: 2.5,
-        imgURl:
-            "https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/400x400/9df78eab33525d08d6e5fb8d27136e95/k/o/komi_-nu-than-so-giao-tiep---tap-2.jpg",
-    },
-    {
-        id: 4,
-        title: "Pack Of 6Disney Kids Readers Level 1 Pack Of 6",
-        prirce: 225000,
+        id: 22,
+        title: "Nhà Có 5 Nàng Dâu - Tập 4",
+        prirce: 175000,
         star: 3.5,
         imgURl:
-            "https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/400x400/9df78eab33525d08d6e5fb8d27136e95/i/m/image_244718_1_5430.jpg",
-    },
-    {
-        id: 5,
-        title: "Disney Kids Readers Level 1 Pack Of 6",
-        prirce: 89000,
-        star: 3.5,
-        imgURl:
-            "https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/400x400/9df78eab33525d08d6e5fb8d27136e95/i/m/image_244718_1_5429.jpg",
-    },
-    {
-        id: 6,
-        title: "Disney Kids Readers Level 1 Pack Of 6",
-        prirce: 17000,
-        star: 2,
-        imgURl:
-            "https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/400x400/9df78eab33525d08d6e5fb8d27136e95/i/m/image_242791.jpg",
-    },
-    {
-        id: 7,
-        title: "Disney Kids Readers Level 1 Pack Of 6",
-        prirce: 37000,
-        star: 2.5,
-        imgURl:
-            "https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/400x400/9df78eab33525d08d6e5fb8d27136e95/n/h/nha-co-5-nang-dau---tap-5.jpg",
-    },
-    {
-        id: 8,
-        title: "Disney Kids Readers Level 1 Pack Of 6",
-        prirce: 5000,
-        star: 3.5,
-        imgURl:
-            "https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/400x400/9df78eab33525d08d6e5fb8d27136e95/8/9/8935244862676.jpg",
-    },
-    {
-        id: 9,
-        title: "Disney Kids Readers Level 1 Pack Of 6 Disney ",
-        prirce: 69000,
-        star: 4.5,
-        imgURl: "https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/400x400/9df78eab33525d08d6e5fb8d27136e95/f/u/fullmetal-alchemist---cang-gi_-kim-thu_t-s_---fullmetal-edition-t_p-12.jpg",
-    },
-    {
-        id: 10,
-        title: "Disney Kids Readers Level 1 Pack Of 6 Disney ",
-        prirce: 14000,
-        star: 4.5,
-        imgURl: "https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/400x400/9df78eab33525d08d6e5fb8d27136e95/i/m/image_221260_1.jpg",
+            "https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/400x400/9df78eab33525d08d6e5fb8d27136e95/n/h/nha-co-5-nang-dau---tap-4-_bia-ao_.jpg",
     },
 
 ];

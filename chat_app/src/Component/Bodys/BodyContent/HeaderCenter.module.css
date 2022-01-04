@@ -40,8 +40,8 @@
 }
 .tron {
   position: absolute;
-  top: 17px;
-  left: 17px;
+  top: 16px;
+  left: 16px;
   background-color: red;
   width: 53px;
   height: 53px;
@@ -64,8 +64,8 @@
 
 .tron2 {
   position: absolute;
-  top: 11px;
-  left: 11px;
+  top: 10.5px;
+  left: 10.5px;
   background-color: var(--color-red);
   width: 65px;
   height: 65px;
