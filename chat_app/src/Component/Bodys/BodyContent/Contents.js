@@ -10,7 +10,7 @@ function Contents() {
         Context.get_products(x);
     };
     return (
-      <List
+        <List
             pagination={{ onChange: (page) => { console.log(page); }, pageSize: 10 }}
             dataSource={Context.data}
             grid={{ xs: 1, sm: 2, md: 3, lg: 5, xl: 5, xxl: 5, }}

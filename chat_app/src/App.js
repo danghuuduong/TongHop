@@ -8,7 +8,6 @@ import Loadding from "./Component/Loading/Loadding";
 import HeaderCenter from "./Component/Bodys/BodyContent/HeaderCenter";
 import Body from "./Component/Bodys/Body";
 import ClickOncart from "./Component/Cart/ClickOncart";
-
 function App() {
   const [loading, setLoading] = React.useState(true);
   useEffect(() => {
@@ -16,19 +15,18 @@ function App() {
     timeout = setTimeout(() => {
       setLoading(false);
     }, 500);
+
     return () => {
       clearTimeout(timeout);
     };
   }, []);
-  const [numArray, setData] = React.useState([1, 5, 3, 0, -1])
 
-  // console.log("🙉🍀 __ data", numArray.sort((a, b) => a - b))
   return (
     <ThemeProvides>
       {loading ? (
         <Loadding />
       ) : (
-        <div>
+        <div >
           <div className="bgr_gray pd0_importan">
             <HeaderTop />
           </div>

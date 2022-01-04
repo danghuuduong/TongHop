@@ -37,7 +37,7 @@ function HeaderTop() {
         style={{ backgroundColor: isOpen ? "red" : "" }}
       >
         <Col className="pd0_importan">
-          <Navbar color="whie" expand="lg" light style={{ height: 35 }}>
+          <Navbar color="white" expand="lg" light style={{ height: 35 }}>
             {/* <NavbarBrand href="/"><img src={img} style={{width:150}} /> </NavbarBrand> */}
 
             <NavbarToggler
@@ -66,7 +66,7 @@ function HeaderTop() {
                 </NavItem>
 
                 <NavItem>
-                  <div href="/components/">
+                  <div >
                     <i className="fas fa-phone-alt" />
                     +(84)986442833
                   </div>
