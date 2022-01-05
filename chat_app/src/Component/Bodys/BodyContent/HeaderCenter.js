@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "reactstrap";
-import { Input, Space } from "antd";
+import { Input, Space, Badge } from "antd";
 import { NavLink } from "react-router-dom";
 import { ThemeContext } from "../../../ThemeProvides";
 import style from "./HeaderCenter.module.css";
@@ -23,10 +23,10 @@ function HeaderCenter() {
     }, []);
     return (
         <Container>
-            <Row style={{ position: "relative"}}>
+            <Row style={{ position: "relative" }}>
                 <Col>
                     <NavLink to="/">
-                    <img src="https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/logo.png" width={200}/>
+                        <img src="https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/logo.png" width={200} />
                     </NavLink>
                 </Col>
                 <Col
@@ -63,11 +63,7 @@ function HeaderCenter() {
                                 </span>
                                 <span style={{ color: "#f7941e" }}>GIỎ HÀNG</span>
                                 {Context.products.length >= 1 && (
-                                    <span className={style.count_cart}>
-                                        {Context.products
-                                            .map((x) => x.sl ?? 1)
-                                            .reduce((total, value) => (total = total + value), 0)}
-                                    </span>
+                                    <Badge className={style.count_cart} count={Context.products.map((x) => x.sl).reduce((total, value) => (total = total + value), 0)} />
                                 )}
                             </div>
                             {
