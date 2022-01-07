@@ -6,30 +6,52 @@ import Classify from "../Handle/Classify";
 import Flash from "../Sale/Flash";
 import style from "./Body.module.css";
 import Charts from "./Intermediary/Charts";
-import FooterC from "./FooterC";
+import { NavLink, useLocation ,useHistory} from "react-router-dom";
+
 import Carousels from "./Carousel/index";
 import { dataPr, data_view2, data_view2_2 } from "../../constants/data";
 import Filter from "../Handle/Filter";
+import { ThemeContext } from "../../ThemeProvides";
 
 function Body() {
+    const history = useHistory();
+    const Context = React.useContext(ThemeContext);
+    console.log("🙉🍀 --> Context.Pathname", Context.Pathname)
+    const isValue = Context.search.length
+    console.log("🙉🍀 --> isValue", isValue)
+   
+    React.useEffect(() => {
+          if (isValue > 0 ) {
+              if( Context.Pathname !== '/checkout/cart'){
+                  history.push("/checkout/cart");
+              }
+          }
+      }, [isValue])
     return (
         <div className="bgr_gray">
             <Container style={{ marginTop: 0, paddingTop: 10 }} fluid='lg'>
-                <Row style={{ marginBottom: 20 }}>
-                    <Col style={{ padding: 0 }}><NavLeft /></Col>
-                    <Col xs={9} style={{ padding: 0 }}>
-                        <Carousels />
-                    </Col>
-                </Row>
-                <Row className={style.prlink}>
-                    {
-                        dataPr.map(x => <Col key={`sale4cai${x.id}`} md={3} style={{ padding: '10px 0', backgroundColor: 'white', textAlign: 'center' }} >
-                            <img src={x.Pr_Link} width={'95%'} alt="" /></Col >)
-                    }
-                </Row>
-                <Row className={style.flash}>
-                    <Flash />
-                </Row>
+                {
+                  
+                    <React.Fragment>
+                                
+                                <Row style={{ marginBottom: 20 }}>
+                                    <Col style={{ padding: 0 }}><NavLeft /></Col>
+                                    <Col xs={9} style={{ padding: 0 }}>
+                                        <Carousels />
+                                    </Col>
+                                </Row>
+                                <Row className={style.prlink}>
+                                    {
+                                        dataPr.map(x => <Col key={`sale4cai${x.id}`} md={3} style={{ padding: '10px 0', backgroundColor: 'white', textAlign: 'center' }} >
+                                            <img src={x.Pr_Link} width={'95%'} alt="" /></Col >)
+                                    }
+                                </Row>
+                                <Row className={style.flash}>
+                                    <Flash />
+                                </Row>
+                    </React.Fragment>
+                }
+                
                 {/*-------------------------------------- Nội Dung Chính------------------ */}
                 <Row>
                     <Col style={{ padding: 0 }}>
@@ -47,7 +69,6 @@ function Body() {
                     <Charts data_view2={data_view2} />
                 </Row>
 
-                <FooterC />
             </Container>
         </div>
     );

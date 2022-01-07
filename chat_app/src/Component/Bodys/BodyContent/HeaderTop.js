@@ -45,7 +45,7 @@ function HeaderTop() {
             <Collapse  navbar  isOpen={isOpen}  style={{   padding: 0,margin: 0 }} >
               <Nav className="me-auto" navbar>
                 <NavItem>
-                  <NavLink end to="/">
+                  <NavLink to="/">
                     TRANG CHỦ
                   </NavLink>
                 </NavItem>
@@ -55,7 +55,7 @@ function HeaderTop() {
                 </NavItem>
 
                 <NavItem>
-                  <NavLink end to="/hepy">
+                  <NavLink to="/hepy">
                     <i className="fas fa-headset"></i> CHĂM SÓC KHÁCH HÀNG
                   </NavLink>
                 </NavItem>
@@ -77,7 +77,7 @@ function HeaderTop() {
                   ) : (
                     <>
                       <NavItem>
-                        <NavLink end to="/register">
+                        <NavLink to="/register">
                           ĐĂNG KÝ
                         </NavLink>
                       </NavItem>

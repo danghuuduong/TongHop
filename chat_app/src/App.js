@@ -1,53 +1,26 @@
 import React, { useEffect } from "react";
 import HeaderTop from "./Component/Bodys/BodyContent/HeaderTop";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch,useLocation } from "react-router-dom";
 import "./App.css";
 import "antd/dist/antd.css";
-import { ThemeProvides } from "./ThemeProvides";
+import { ThemeProvides,ThemeContext } from "./ThemeProvides";
 import Loadding from "./Component/Loading/Loadding";
 import HeaderCenter from "./Component/Bodys/BodyContent/HeaderCenter";
 import Body from "./Component/Bodys/Body";
 import ClickOncart from "./Component/Cart/ClickOncart";
 import BreadCrumb from "./Component/Handle/BreadCrumb/BreadCrumb";
-import Item from "antd/lib/list/Item";
-
-
-const parameter = 'Thanh toán';
-
-const data = [
-  {
-    id: 1,
-    Object: 'cart',
-    value: [
-      {
-        path: '/checkout/cart',
-        name: 'Giỏ Hàng',
-      },
-      {
-        path: '/payment',
-        name: 'Thanh toán',
-      }
-    ]
-
-  },
-  {
-    id: 2,
-    Object: 'contact',
-    value: [
-      {
-        path: '/contact',
-        name: 'Hỗ Trợ khách hàng',
-      }
-    ]
-  }
-]
-console.log("🙉🍀 __ data", data.filter(x => x.value.some(child => child.name === parameter)))
-
-
+import FooterC from "./Component/Bodys/FooterC";
 
 function App() {
   const [loading, setLoading] = React.useState(true);
+  let { pathname } = useLocation();
+  const Context = React.useContext(ThemeContext);
   useEffect(() => {
+  Context.setPathname(pathname)
+    }, [pathname]);
+
+  useEffect(() => {
+    
     var timeout;
     timeout = setTimeout(() => {
       setLoading(false);
@@ -57,10 +30,10 @@ function App() {
       clearTimeout(timeout);
     };
   }, []);
-
-
+ 
   return (
-    <ThemeProvides>
+    
+    <React.Fragment>
       {loading ? (
         <Loadding />
       ) : (
@@ -73,9 +46,11 @@ function App() {
             <Route exact path="/" component={Body} />
             <Route exact path="/checkout/cart" component={ClickOncart} />
           </Switch>
+          <FooterC />
+
         </div>
       )}
-    </ThemeProvides>
+    </React.Fragment>
 
   );
 }

@@ -5,20 +5,49 @@ import { NavLink, useLocation } from "react-router-dom";
 import { Breadcrumb } from 'antd';
 import { Container, Row, Col } from "reactstrap";
 
+const data = [
+  {
+    id: 1,
+    Object: 'cart',
+    value: [
+      {
+        path: '/checkout/cart',
+        name: 'Giỏ Hàng',
+      },
+      {
+        path: '/payment',
+        name: 'Thanh toán',
+      },
+      {
+        path: '/payment2',
+        name: 'dau buoi',
+      }
+    ]
+
+  },
+  {
+    id: 2,
+    Object: 'contact',
+    value: [
+      {
+        path: '/contact',
+        name: 'Hỗ Trợ khách hàng',
+      }
+    ]
+  }
+]
 
 function BreadCrumb() {
     let { pathname } = useLocation();
     const [listBreadcrumb, setListBreadcrumb] = React.useState([])
-
     React.useEffect(() => {
-        if (pathname === '/') return setListBreadcrumb([])
-        const trung = listBreadcrumb.some(x => x === pathname)
-        if (trung) {
-            const findIndex = listBreadcrumb.findIndex((x) => x === pathname)
-            setListBreadcrumb(listBreadcrumb.filter((x, i) => i <= findIndex))
-        } else {
-            setListBreadcrumb(pev => [...pev, pathname])
-        }
+        const theloai = data.filter(x => x.value.some(child => child.path === pathname))
+        setListBreadcrumb(
+            theloai.map(x => {
+            const findIndex = x.value.findIndex( x => x.path === pathname)
+            return x.value.filter((item,index) =>  index <= findIndex )
+            }
+        ))
     }, [pathname])
     return (
         <React.Fragment>
@@ -32,19 +61,19 @@ function BreadCrumb() {
                                         <NavLink end to="/"> <HomeOutlined style={{ transform: 'translateY(-4px)', fontSize: 20 }} /> HOME</NavLink>
                                     </Breadcrumb.Item>
                                     {
-                                        listBreadcrumb.map(item => {
-                                            switch (item) {
-                                                case '/checkout/cart':
-                                                    return <Breadcrumb.Item ><NavLink end to={item}>Giỏ hàng</NavLink></Breadcrumb.Item>
-                                                case '/payment':
-                                                    return <Breadcrumb.Item ><NavLink end to={item}>Thanh toán</NavLink></Breadcrumb.Item>
-                                                default:
-                                                // code block
-                                            }
-                                        })
+                                        listBreadcrumb.map((item,i) =>  {
+                                                   return  <React.Fragment key={i}>
+                                                       {
+                                                           item.map((x,index) =>
+                                                           <Breadcrumb.Item key={index}>
+                                                               <NavLink end to={x.path}> {x.name}</NavLink>
+                                                           </Breadcrumb.Item>
+                                                           )
+                                                       }
+                                                         </React.Fragment>
+                                                        }
+                                                    )
                                     }
-
-
                                 </Breadcrumb>
                             </Col>
                         </Row>

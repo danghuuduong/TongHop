@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "reactstrap";
+import { NavLink, useLocation } from "react-router-dom";
 import { Input, Space, Badge } from "antd";
-import { NavLink } from "react-router-dom";
 import { ThemeContext } from "../../../ThemeProvides";
 import style from "./HeaderCenter.module.css";
 
@@ -10,16 +10,19 @@ const { Search } = Input;
 const search = <i style={{ fontSize: 18 }} className="fas fa-search" />;
 
 function HeaderCenter() {
+    let { pathname } = useLocation();
     const Context = React.useContext(ThemeContext);
     const [offsets, setOffset] = React.useState(0);
 
     const onSearch = (value) => {
-        alert(`Không tìm thấy từ khóa: "${value}"`);
+        Context.setSearch(pev => [...pev,value])
     };
+  
     React.useEffect(() => {
-        window.onscroll = () => {
-            setOffset(window.pageYOffset)
-        }
+            window.onscroll = () => {
+              setOffset(window.pageYOffset) 
+            }
+        return () => {};
     }, []);
     return (
         <Container>
@@ -54,8 +57,8 @@ function HeaderCenter() {
                         justifyContent: "end",
                     }}
                 >
-                    <NavLink end to="/checkout/cart">
-                        <div className={offsets > 388 && Context.products.length >= 1 ? style.icon_cardSrcoll : ''}>
+                    <NavLink to="/checkout/cart">
+                        <div className={offsets > 300 && Context.products.length >= 1 && pathname ==='/' ? style.icon_cardSrcoll : ''}>
                             <div className={`${style.icon_card}`}>
                                 <span>
                                     <i className="fas fa-shopping-cart"></i>
@@ -66,13 +69,12 @@ function HeaderCenter() {
                                 )}
                             </div>
                             {
-                                offsets > 388 && <div className={style.tron}></div>
+                                offsets > 300 &&
+                                 <>
+                                <div className={style.tron}></div>
+                                <div className={style.tron2}></div>
+                                </>
                             }
-                            {
-                                offsets > 388 && <div className={style.tron2}></div>
-                            }
-
-
                         </div>
 
                     </NavLink>

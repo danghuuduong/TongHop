@@ -41,19 +41,29 @@ function ThemeProvides({ children }) {
   const remove_products = (value) => { setProducts(products.filter((products) => products.id !== value.id)); };
   // ----------------------------------------------------------------------------------------------------
   const [data, setData] = React.useState([...dataQA])
-  const [search, setSearch] = React.useState()
+  const [search, setSearch] = React.useState([])
+  const [Pathname, setPathname] = React.useState()
 
   const value = {
-    user,
+
     data,
     setData,
-    products,
+
+    search,
     setSearch,
+    
+    Pathname,
+    setPathname,
+    
+    products,
     setProducts,
-    hanldeGoogle,
-    hanldeGoogle_signOut,
     get_products,
     remove_products,
+
+    user,
+    hanldeGoogle,
+    hanldeGoogle_signOut,
+    
   };
 
   return (
