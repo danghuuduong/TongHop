@@ -30,12 +30,12 @@ function Body() {
                 <Row className={style.flash}>
                     <Flash />
                 </Row>
-                {/* Nội Dung Chính-------------------------------------------------------- */}
+                {/*-------------------------------------- Nội Dung Chính------------------ */}
                 <Row>
                     <Col style={{ padding: 0 }}>
                         <Filter />
-                        </Col>
-                    <Col md={10} style={{ backgroundColor: "#fff", padding: 0, margin: 0 }} >
+                    </Col>
+                    <Col md={9} style={{ backgroundColor: "#fff", padding: 0, margin: 0 }} >
                         <Classify /> <hr />
                         <Row style={{ margin: 0 }}>  <Contents /> </Row>
                     </Col>

@@ -26,7 +26,7 @@ function HeaderCenter() {
             <Row style={{ position: "relative" }}>
                 <Col>
                     <NavLink to="/">
-                        <img src="https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/logo.png" width={200} />
+                        <img src="https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/logo.png" alt="" width={200} />
                     </NavLink>
                 </Col>
                 <Col
@@ -40,7 +40,6 @@ function HeaderCenter() {
                     <Space direction="vertical" style={{ width: "100%" }}>
                         <Search
                             placeholder="Tìm kiếm..."
-                            // enterButton={search}
                             enterButton={search}
                             size="large"
                             // suffix={suffix}

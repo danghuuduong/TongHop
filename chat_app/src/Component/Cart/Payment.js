@@ -1,6 +1,7 @@
 import React from 'react'
 import ConvertNVD from '../Handle/ConvertNVD'
 import { Button } from "antd";
+import { NavLink } from "react-router-dom";
 import style from './Payment.module.css';
 
 function Promotion_pay({ checkedList }) {
@@ -60,7 +61,9 @@ function Promotion_pay({ checkedList }) {
                     <Button className={checkedList.length > 0 ? "bt__forceUpdate_lg_ok" : "bt__forceUpdate_lg"}
                         disabled={checkedList.length < 1} size="large"
                         style={{ borderRadius: 10, fontSize: 18, fontWeight: 700, height: 45, marginTop: 15 }}
-                    >Thanh toán</Button>
+                    >
+                        <NavLink end to="/payment">THANH TOÁN</NavLink>
+                    </Button>
                     <span className='text'>(Giảm giá trên web chỉ áp dụng cho bán lẻ)</span>
                 </div>
             </div>

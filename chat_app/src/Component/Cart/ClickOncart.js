@@ -1,6 +1,6 @@
 import React from 'react';
 import 'antd/dist/antd.css';
-import { Checkbox ,Button} from 'antd';
+import { Checkbox, Button } from 'antd';
 import { ThemeContext } from "../../ThemeProvides";
 import { Container, Row, Col } from "reactstrap";
 import { MinusOutlined, PlusOutlined } from '@ant-design/icons';
@@ -52,20 +52,20 @@ function ClickOncart() {
                         </Row>
                         <Row style={{ backgroundColor: '#fff', borderRadius: 8, overflowY: "scroll", height: 495 }}>
                             {
-                                Context.products.length < 1 && <div style={{display:'flex',flexDirection:'column',alignItems:'center',marginTop:30}}>
-                                <img src='https://cdn0.fahasa.com/skin//frontend/ma_vanese/fahasa/images/checkout_cart/ico_emptycart.svg' width={150}/>
-                                <p>Chưa có sản phẩm trong giỏ hàng của bạn.</p>
-                                <Button className="bt__forceUpdate_lg_ok" 
-                                    style={{ borderRadius: 10,width:200,height:40 }}
-                                >MUA SẮM NGAY</Button>
-                        </div>
+                                Context.products.length < 1 && <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: 30 }}>
+                                    <img src='https://cdn0.fahasa.com/skin//frontend/ma_vanese/fahasa/images/checkout_cart/ico_emptycart.svg' alt='' width={150} />
+                                    <p>Chưa có sản phẩm trong giỏ hàng của bạn.</p>
+                                    <Button className="bt__forceUpdate_lg_ok"
+                                        style={{ borderRadius: 10, width: 200, height: 40 }}
+                                    >MUA SẮM NGAY</Button>
+                                </div>
                             }
                             <CheckboxGroup value={checkedList} onChange={onChange} style={{ width: '100%', pading: 0, margin: 0 }}>
                                 {
                                     Context.products.map((x, i) => {
                                         return (
                                             <>
-                                                <div style={{ margin: '0 25px 5px 25px' }} key={`${x.id} ${i}`}>
+                                                <div style={{ margin: '0 25px 5px 25px' }} key={`ClickOncart${x.id}`}>
                                                     <Checkbox type="checkbox" value={x} style={{ margin: 0, padding: 0, transform: 'translate(-15px,70px)' }}></Checkbox>
                                                     <Row>
                                                         <Col style={{ display: "flex", alignItems: "center", justifyContent: 'space-between' }} xs={7} >

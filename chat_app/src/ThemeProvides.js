@@ -40,11 +40,21 @@ function ThemeProvides({ children }) {
   };
   const remove_products = (value) => { setProducts(products.filter((products) => products.id !== value.id)); };
   // ----------------------------------------------------------------------------------------------------
-
-
   const [data, setData] = React.useState([...dataQA])
+  const [search, setSearch] = React.useState()
 
-  const value = { user, products, setProducts, hanldeGoogle, hanldeGoogle_signOut, get_products, remove_products, data, setData };    // 
+  const value = {
+    user,
+    data,
+    setData,
+    products,
+    setSearch,
+    setProducts,
+    hanldeGoogle,
+    hanldeGoogle_signOut,
+    get_products,
+    remove_products,
+  };
 
   return (
     <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
