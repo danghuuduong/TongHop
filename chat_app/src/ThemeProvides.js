@@ -9,6 +9,12 @@ function ThemeProvides({ children }) {
   const history = useHistory();
   const [user, setUser] = React.useState(null);
   const [products, setProducts] = React.useState([]);
+
+  const [data, setData] = React.useState([...dataQA])
+  const [Pathname, setPathname] = React.useState()
+  const [search, setSearch] = React.useState([])
+
+
   React.useEffect(() => {
     auth.onAuthStateChanged((user) => {
       setUser(user?._delegate);
@@ -40,9 +46,8 @@ function ThemeProvides({ children }) {
   };
   const remove_products = (value) => { setProducts(products.filter((products) => products.id !== value.id)); };
   // ----------------------------------------------------------------------------------------------------
-  const [data, setData] = React.useState([...dataQA])
-  const [search, setSearch] = React.useState([])
-  const [Pathname, setPathname] = React.useState()
+
+
 
   const value = {
 
@@ -51,10 +56,10 @@ function ThemeProvides({ children }) {
 
     search,
     setSearch,
-    
+
     Pathname,
     setPathname,
-    
+
     products,
     setProducts,
     get_products,
@@ -63,7 +68,7 @@ function ThemeProvides({ children }) {
     user,
     hanldeGoogle,
     hanldeGoogle_signOut,
-    
+
   };
 
   return (

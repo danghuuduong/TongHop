@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "reactstrap";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation, useHistory } from "react-router-dom";
 import { Input, Space, Badge } from "antd";
 import { ThemeContext } from "../../../ThemeProvides";
 import style from "./HeaderCenter.module.css";
@@ -13,20 +13,25 @@ function HeaderCenter() {
     let { pathname } = useLocation();
     const Context = React.useContext(ThemeContext);
     const [offsets, setOffset] = React.useState(0);
+    const history = useHistory();
 
     const onSearch = (value) => {
-        Context.setSearch(pev => [...pev,value])
+        if (value) {
+            history.push("/search");
+            return Context.setSearch(pev => [...pev, value])
+        }
+
     };
-  
+
     React.useEffect(() => {
-            window.onscroll = () => {
-              setOffset(window.pageYOffset) 
-            }
-        return () => {};
+        window.onscroll = () => {
+            setOffset(window.pageYOffset)
+        }
+        return () => { };
     }, []);
     return (
         <Container>
-            <Row style={{ position: "relative" }}>
+            <Row style={{ position: "relative" }} >
                 <Col>
                     <NavLink to="/">
                         <img src="https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/logo.png" alt="" width={200} />
@@ -58,7 +63,7 @@ function HeaderCenter() {
                     }}
                 >
                     <NavLink to="/checkout/cart">
-                        <div className={offsets > 300 && Context.products.length >= 1 && pathname ==='/' ? style.icon_cardSrcoll : ''}>
+                        <div className={offsets > 300 && Context.products.length >= 1 && pathname === '/' ? style.icon_cardSrcoll : ''}>
                             <div className={`${style.icon_card}`}>
                                 <span>
                                     <i className="fas fa-shopping-cart"></i>
@@ -70,9 +75,9 @@ function HeaderCenter() {
                             </div>
                             {
                                 offsets > 300 &&
-                                 <>
-                                <div className={style.tron}></div>
-                                <div className={style.tron2}></div>
+                                <>
+                                    <div className={style.tron}></div>
+                                    <div className={style.tron2}></div>
                                 </>
                             }
                         </div>

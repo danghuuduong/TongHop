@@ -6,13 +6,35 @@ import style from "./Contents.module.css";
 
 function Contents() {
     const Context = React.useContext(ThemeContext);
+    console.log("🙉🍀 __ data", Context.data)
+    const [dataPRD, setDataPRD] = React.useState([])
+    const valueSearch = Context.search.slice(-1)[0]
+    console.log("🙉🍀 __ valueSearch", valueSearch)
+    console.log("🙉🍀 __ dataPRD", dataPRD)
+
+    React.useEffect(() => {
+        if (Context.data) {
+            setDataPRD(Context.data)
+        }
+    }, [])
+    const filterValueSearch = dataPRD.filter(item => item.title.toLowerCase().includes(valueSearch?.toLowerCase()))
+
+    React.useEffect(() => {
+        if (valueSearch) {
+            setDataPRD(filterValueSearch)
+        }
+    }, [valueSearch])
+
+
+
     const selectProduc = (x) => {
         Context.get_products(x);
     };
+
     return (
         <List
             pagination={{ onChange: (page) => { console.log(page); }, pageSize: 8 }}
-            dataSource={Context.data}
+            dataSource={dataPRD}
             grid={{ xs: 1, sm: 2, md: 3, lg: 3, xl: 4, xxl: 4, }}
             renderItem={(x, i) => (
                 <List.Item key={`products_${i}_${x.id}`} >

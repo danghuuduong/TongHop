@@ -8,8 +8,8 @@ const { Option } = Select;
 
 function Classify() {
     const Context = React.useContext(ThemeContext);
-
-    function handleChange(value) {
+    const valueSearch = Context.search.slice(-1)[0]
+    const handleChange = (value) => {
         switch (value) {
             case 'min':
                 const sortData = Context.data.sort((a, b) => a.prirce - b.prirce);
@@ -25,7 +25,7 @@ function Classify() {
     return (
         <Row style={{ margin: '20px 5px' }}>
             <Col>
-            <div style={{fontSize:18,}}>563 KẾT QUẢ TÌM KIẾM VỚI: "phim tập"</div>
+                <div style={{ fontSize: 18, }}>563 KẾT QUẢ TÌM KIẾM VỚI: "{valueSearch}"</div>
             </Col>
             <Col style={{ display: 'flex', alignItems: 'center', justifyContent: 'end' }}>
                 <div style={{ textAlign: 'end', display: 'flex', alignItems: 'center', justifyContent: 'end' }}>
