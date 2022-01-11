@@ -10,7 +10,12 @@ import Carousels from "./Carousel/index";
 import { dataPr, data_view2, data_view2_2 } from "../../constants/data";
 import Filter from "../Handle/Filter";
 
+
 function Body({ hiden }) {
+    const [NumberSearch, setNumberSearch] = React.useState()
+    const getNumberSearch = (value) => {
+        return setNumberSearch(value)
+    }
     return (
         <div className="bgr_gray">
             <Container style={{ marginTop: 0, paddingTop: 10 }} fluid='lg'>
@@ -42,8 +47,8 @@ function Body({ hiden }) {
                         <Filter />
                     </Col>
                     <Col md={9} style={{ backgroundColor: "#fff", padding: 0, margin: 0 }} >
-                        <Classify /> <hr />
-                        <Row style={{ margin: 0 }}>  <Contents /> </Row>
+                        <Classify NumberSearch={NumberSearch} /> <hr />
+                        <Row style={{ margin: 0 }}>  <Contents getNumberSearch={getNumberSearch} /> </Row>
                     </Col>
                 </Row>
                 {

@@ -13,16 +13,16 @@ function Index() {
                 </div>
                 <Carousel autoplay ref={slider} >
                     <div>
-                        <img src="https://cdn0.fahasa.com/media/magentothem/banner7/TrangMonthlySale_T122_mainbanner__920x420.jpg" alt='' width={'100%'} />
+                        <img src="https://cdn0.fahasa.com/media/magentothem/banner7/bigsale_920x420.png" alt='' width={'100%'} />
                     </div>
                     <div>
-                        <img src="https://cdn0.fahasa.com/media/magentothem/banner7/bigsale_resize_920.jpg" width={'100%'} alt='' />
+                        <img src="https://cdn0.fahasa.com/media/magentothem/banner7/Moca_T1_920x420.png" width={'100%'} alt='' />
                     </div>
                     <div>
-                        <img src="https://cdn0.fahasa.com/media/magentothem/banner7/TrangMonthlySale_T122_mainbanner__920x420.jpg" alt='' width={'100%'} />
+                        <img src="https://cdn0.fahasa.com/media/magentothem/banner7/1manga_920_x_420.png" alt='' width={'100%'} />
                     </div>
                     <div>
-                        <img src="https://cdn0.fahasa.com/media/magentothem/banner7/bigsale_resize_920.jpg" alt='' width={'100%'} />
+                        <img src="https://cdn0.fahasa.com/media/magentothem/banner7/cho_do_cu_920x420.png" alt='' width={'100%'} />
                     </div>
                 </Carousel>
             </div>

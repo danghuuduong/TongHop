@@ -33,7 +33,7 @@ function HeaderCenter() {
         <Container>
             <Row style={{ position: "relative" }} >
                 <Col>
-                    <NavLink to="/">
+                    <NavLink end="true" to="/">
                         <img src="https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/logo.png" alt="" width={200} />
                     </NavLink>
                 </Col>
@@ -50,7 +50,7 @@ function HeaderCenter() {
                             placeholder="Tìm kiếm..."
                             enterButton={search}
                             size="large"
-                            // suffix={suffix}
+                            allowClear={true}
                             onSearch={onSearch}
                         />
                     </Space>
@@ -62,7 +62,7 @@ function HeaderCenter() {
                         justifyContent: "end",
                     }}
                 >
-                    <NavLink to="/checkout/cart">
+                    <NavLink end="true" to="/checkout/cart">
                         <div className={offsets > 300 && Context.products.length >= 1 && pathname === '/' ? style.icon_cardSrcoll : ''}>
                             <div className={`${style.icon_card}`}>
                                 <span>

@@ -161,10 +161,10 @@ const data = {
 
 // Pr quảng cáo 4 cái hình to hình Vuông-----------------------------
 const dataPr = [
-    { id: 1, Pr_Link: 'https://cdn0.fahasa.com/media/wysiwyg/Thang-01-2022/TrangMonthlySale_T122_bo1__310x210.jpg' },
-    { id: 3, Pr_Link: 'https://cdn0.fahasa.com/media/wysiwyg/Thang-01-2022/TrangMonthlySale_T122_bo2__310x210.jpg' },
-    { id: 2, Pr_Link: 'https://cdn0.fahasa.com/media/wysiwyg/CMS-PAGE/MangaComic/TGDQ/after1812/TGDQv4_310%20x%20210.png' },
-    { id: 4, Pr_Link: 'https://cdn0.fahasa.com/media/wysiwyg/Thang-01-2022/TrangMonthlySale_T122_bo3__310x210.jpg' },
+    { id: 1, Pr_Link: 'https://cdn0.fahasa.com/media/wysiwyg/Thang-01-2022/bo_design_310x210%20copy.png' },
+    { id: 3, Pr_Link: 'https://cdn0.fahasa.com/media/wysiwyg/Thang-01-2022/b%E1%BB%99%20design_310x210%20copy%204.png' },
+    { id: 2, Pr_Link: 'https://cdn0.fahasa.com/media/wysiwyg/Thanh.VHDT/BTS-T11/Back2School_T0122_mainbanner_310x210.jpg' },
+    { id: 4, Pr_Link: 'https://cdn0.fahasa.com/media/wysiwyg/Thang-01-2022/310x210_shopeepay_T1.jpg' },
 ]
 
 // Chỗ Flash Sale 6 cái nhỏ nhỏ tròn------------------------------------

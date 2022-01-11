@@ -18,7 +18,7 @@ function App() {
   const Context = React.useContext(ThemeContext);
   useEffect(() => {
     Context.setPathname(pathname)
-  }, [pathname]);
+  }, [Context, pathname]);
 
   useEffect(() => {
 

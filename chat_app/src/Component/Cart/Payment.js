@@ -62,7 +62,7 @@ function Promotion_pay({ checkedList }) {
                         disabled={checkedList.length < 1} size="large"
                         style={{ borderRadius: 10, fontSize: 18, fontWeight: 700, height: 45, marginTop: 15 }}
                     >
-                        <NavLink end to="/payment">THANH TOÁN</NavLink>
+                        <NavLink end="true" to="/payment">THANH TOÁN</NavLink>
                     </Button>
                     <span className='text'>(Giảm giá trên web chỉ áp dụng cho bán lẻ)</span>
                 </div>

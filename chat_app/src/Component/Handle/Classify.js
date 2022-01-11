@@ -6,7 +6,7 @@ import { dataQA } from '../../constants/data';
 
 const { Option } = Select;
 
-function Classify() {
+function Classify({ NumberSearch }) {
     const Context = React.useContext(ThemeContext);
     const valueSearch = Context.search.slice(-1)[0]
     const handleChange = (value) => {
@@ -25,7 +25,9 @@ function Classify() {
     return (
         <Row style={{ margin: '20px 5px' }}>
             <Col>
-                <div style={{ fontSize: 18, }}>563 KẾT QUẢ TÌM KIẾM VỚI: "{valueSearch}"</div>
+                {
+                    Context.Pathname !== '/' && <div style={{ fontSize: 18, }}>{NumberSearch} KẾT QUẢ TÌM KIẾM VỚI: "{valueSearch}"</div>
+                }
             </Col>
             <Col style={{ display: 'flex', alignItems: 'center', justifyContent: 'end' }}>
                 <div style={{ textAlign: 'end', display: 'flex', alignItems: 'center', justifyContent: 'end' }}>
