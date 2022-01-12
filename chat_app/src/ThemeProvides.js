@@ -9,6 +9,8 @@ function ThemeProvides({ children }) {
   const history = useHistory();
   const [user, setUser] = React.useState(null);
   const [products, setProducts] = React.useState([]);
+  const [detailpProducts, setDetailpProducts] = React.useState();
+  console.log("🙉🍀 __ detailpProducts", detailpProducts)
 
   const [data, setData] = React.useState([...dataQA])
   const [Pathname, setPathname] = React.useState()
@@ -64,6 +66,9 @@ function ThemeProvides({ children }) {
     setProducts,
     get_products,
     remove_products,
+
+    detailpProducts,
+    setDetailpProducts,
 
     user,
     hanldeGoogle,

@@ -26,7 +26,12 @@ function Classify({ NumberSearch }) {
         <Row style={{ margin: '20px 5px' }}>
             <Col>
                 {
-                    Context.Pathname !== '/' && <div style={{ fontSize: 18, }}>{NumberSearch} KẾT QUẢ TÌM KIẾM VỚI: "{valueSearch}"</div>
+                    Context.Pathname !== '/' && <>
+                        {
+                            NumberSearch === 0 ? <div>KHÔNG TÌM THẤY KẾT QUẢ : {valueSearch}</div> :
+                                <div style={{ fontSize: 18, }}>{NumberSearch} KẾT QUẢ TÌM KIẾM VỚI: "{valueSearch}"</div>
+                        }
+                    </>
                 }
             </Col>
             <Col style={{ display: 'flex', alignItems: 'center', justifyContent: 'end' }}>

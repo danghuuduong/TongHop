@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Row, Col } from "reactstrap";
 import { NavLink, useLocation, useHistory } from "react-router-dom";
 import { Input, Space, Badge } from "antd";
-import { ThemeContext } from "../../../ThemeProvides";
+import { ThemeContext } from "../../../../ThemeProvides";
 import style from "./HeaderCenter.module.css";
 
 const { Search } = Input;

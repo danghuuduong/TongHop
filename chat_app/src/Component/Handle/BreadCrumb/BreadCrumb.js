@@ -34,6 +34,16 @@ const data = [
         name: 'Tìm Kiếm',
       }
     ]
+  },
+  {
+    id: 3,
+    Object: 'detail',
+    value: [
+      {
+        path: '/detail',
+        name: 'Thông tin sản phẩm',
+      }
+    ]
   }
 ]
 

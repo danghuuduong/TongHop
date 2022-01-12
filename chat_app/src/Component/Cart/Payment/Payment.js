@@ -1,5 +1,5 @@
 import React from 'react'
-import ConvertNVD from '../Handle/ConvertNVD'
+import ConvertNVD from '../../Handle/ConvertNVD'
 import { Button } from "antd";
 import { NavLink } from "react-router-dom";
 import style from './Payment.module.css';

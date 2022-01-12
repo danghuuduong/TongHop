@@ -1,11 +1,11 @@
 import React from 'react';
 import 'antd/dist/antd.css';
 import { Checkbox, Button } from 'antd';
-import { ThemeContext } from "../../ThemeProvides";
+import { ThemeContext } from "../../../ThemeProvides";
 import { Container, Row, Col } from "reactstrap";
 import { MinusOutlined, PlusOutlined } from '@ant-design/icons';
-import ConvertNVD from '../Handle/ConvertNVD'
-import Promotionpay from './Payment';
+import ConvertNVD from '../../Handle/ConvertNVD'
+import Promotionpay from '../Payment/Payment';
 import style from './ClickOncart.module.css';
 
 const CheckboxGroup = Checkbox.Group;
