@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect } from "react";
+import React, { useEffect, useLayoutEffect, Suspense } from "react";
 import HeaderTop from "./Component/Bodys/BodyContent/HeaderTop/HeaderTop";
 import { Route, Switch, useLocation, useHistory } from "react-router-dom";
 import "./App.css";
@@ -38,7 +38,7 @@ function App() {
     var timeout;
     timeout = setTimeout(() => {
       setLoading(false);
-    }, 300);
+    }, 100);
 
     return () => { clearTimeout(timeout); };
   }, []);
@@ -54,12 +54,15 @@ function App() {
           <div style={{ backgroundColor: '#fff' }}><HeaderCenter />  </div>
 
           <BreadCrumb />
-          <Switch>
-            <Route exact path="/" component={Body} />
-            <Route exact path="/search" component={Search} />
-            <Route exact path="/detail" component={Detail} />
-            <Route exact path="/checkout/cart" component={ClickOncart} />
-          </Switch>
+
+          <Suspense fallback={<Loadding />}>
+            <Switch>
+              <Route exact path="/" component={Body} />
+              <Route exact path="/search" component={Search} />
+              <Route exact path="/detail" component={Detail} />
+              <Route exact path="/checkout/cart" component={ClickOncart} />
+            </Switch>
+          </Suspense>
           <FooterC />
 
         </div>
