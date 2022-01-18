@@ -1,0 +1,22 @@
+1. Hooks
+2. js array 
+3. object 
+4. html
+5. css
+6. OOP
+7. thuật toán 
+8. regexr
+9. git
+10. bootstrap
+11. PTS
+12. ES6
+13. axios
+14. lodash 
+15. antd
+16. API RESTful
+17. Webpack
+18. Enzyme
+19. Redux và Flux ,redux saga
+20. Tailwind
+21.DOM EVENT
+22. LIST EVENT
